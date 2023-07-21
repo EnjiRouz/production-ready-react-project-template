@@ -1,10 +1,10 @@
-const path = require('path');
-const webpack = require('webpack');
+import path from 'path';
+import webpack from 'webpack';
+import HTMLWebpackPlugin from 'html-webpack-plugin';
 
-const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ProgressPlugin = webpack.ProgressPlugin;
 
-module.exports = {
+const config: webpack.Configuration = {
     mode: 'production',
     entry: path.resolve(__dirname, 'src', 'index.ts'),
     output: {
@@ -31,3 +31,5 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js'],
     }
 }
+
+export default config;
