@@ -36,4 +36,24 @@ export interface BuildOptions {
      * Пути для сборки приложения
      */
     paths: BuildPaths;
+
+    /**
+     * Порт для запуска приложения
+     */
+    port: number;
+}
+
+/**
+ * Переменные окружения
+ */
+export interface BuildEnvironment {
+    /**
+     * Вариант сборки приложения
+     */
+    mode: BuildMode;
+
+    /**
+     * Порт для запуска приложения
+     */
+    port: number;
 }

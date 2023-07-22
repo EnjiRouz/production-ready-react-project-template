@@ -5,6 +5,7 @@ import { BuildOptions } from "./types/config";
 import { buildPlugins } from "./buildPlugins";
 import { buildLoaders } from "./buildLoaders";
 import { buildResolvers } from "./buildResolvers";
+import { buildDevServer } from "./buildDevServer";
 
 /**
  * Подготовка конфигурации для сборки приложения с помощью Webpack
@@ -14,6 +15,8 @@ import { buildResolvers } from "./buildResolvers";
 export function buildWebpackConfig(options: BuildOptions): Configuration {
     const { mode, paths } = options;
     const { entryPath, buildPath } = paths;
+
+    const isDevModeEnabled = mode === 'development';
 
     return {
         mode: mode,
@@ -28,5 +31,7 @@ export function buildWebpackConfig(options: BuildOptions): Configuration {
             rules: buildLoaders(),
         },
         resolve: buildResolvers(),
+        devtool: isDevModeEnabled ? 'inline-source-map' : undefined,
+        devServer: isDevModeEnabled ? buildDevServer(options) : undefined,
     }
 }

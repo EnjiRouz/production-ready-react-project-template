@@ -1,7 +1,8 @@
+import path from 'path';
+
 import { Configuration } from 'webpack';
 import { buildWebpackConfig } from './config/build/buildWebpackConfig';
-import { BuildPaths } from './config/build/types/config';
-import path from 'path';
+import { BuildEnvironment, BuildPaths } from './config/build/types/config';
 
 const paths: BuildPaths = {
     entryPath: path.resolve(__dirname, 'src', 'index.ts'),
@@ -9,9 +10,17 @@ const paths: BuildPaths = {
     htmlPath: path.resolve(__dirname, 'public', 'index.html'),
 }
 
-const config: Configuration = buildWebpackConfig({
-    mode: "development",
-    paths,
-});
+export default (env: BuildEnvironment) => {
+    const { mode, port } = env;
+    
+    const MODE = mode || "development";
+    const PORT = port || 3000;
+    
+    const config: Configuration = buildWebpackConfig({
+        mode: MODE,
+        paths,
+        port: PORT,
+    });
 
-export default config;
+    return config;
+};
