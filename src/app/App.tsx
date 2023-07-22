@@ -1,35 +1,28 @@
-import { FunctionComponent, Suspense, memo } from "react";
+import { FC, Suspense, memo } from "react";
 import { Route, Routes, Link } from "react-router-dom";
 
-import { LazyMainPage } from "../pages/MainPage";
-import { LazyAboutPage } from "../pages/AboutPage";
-
-import { PageData } from "./types";
-import classes from './App.module.css';
-
-const pages: Record<string, PageData> = {
-  main: {
-    path: '/',
-    element: <LazyMainPage />
-  },
-  about: {
-    path: '/about',
-    element: <LazyAboutPage />
-  },
-}
+import { useTheme } from "../theme";
+import { PAGES } from "./constants";
+import '../styles/index.scss';
 
 const loadingStub = <span>Loading...</span>;
 
-export const App: FunctionComponent = memo(function App() {  
+export const App: FC = memo(function App() { 
+    const { main, about } = PAGES;
+    const { theme, toggleTheme } = useTheme();
+  
     return (
-      <div className={classes.App}>
-        <Link to={pages.main.path}>Main</Link>
-        <Link to={pages.about.path}>About</Link>
-        
+      // TODO подключить BEM
+      <div className={`App ${theme}`}>
+        <button onClick={toggleTheme}>Изменить тему</button>
+
+        <Link to={main.path}>Main</Link>
+        <Link to={about.path}>About</Link>
+
         <Suspense fallback={loadingStub}>
           <Routes>
-            <Route path={pages.about.path} element={pages.about.element} />
-            <Route path={pages.main.path} element={pages.main.element} />
+            <Route path={about.path} element={about.element} />
+            <Route path={main.path} element={main.element} />
           </Routes>
         </Suspense>
       </div>
