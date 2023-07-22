@@ -1,6 +1,7 @@
 import { FC, Suspense, memo } from "react";
 import { Route, Routes, Link } from "react-router-dom";
 
+import { classNames } from "../helpers";
 import { useTheme } from "../theme";
 import { PAGES } from "./constants";
 import '../styles/index.scss';
@@ -12,8 +13,7 @@ export const App: FC = memo(function App() {
     const { theme, toggleTheme } = useTheme();
   
     return (
-      // TODO подключить BEM
-      <div className={`App ${theme}`}>
+      <div className={classNames("app", {}, [theme])}>
         <button onClick={toggleTheme}>Изменить тему</button>
 
         <Link to={main.path}>Main</Link>
