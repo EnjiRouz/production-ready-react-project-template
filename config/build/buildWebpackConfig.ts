@@ -29,7 +29,7 @@ export function buildWebpackConfig(options: BuildOptions): Configuration {
         module: {
             rules: buildLoaders(options),
         },
-        resolve: buildResolvers(),
+        resolve: buildResolvers(options),
         devtool: isDevModeEnabled ? 'inline-source-map' : undefined,
         devServer: isDevModeEnabled ? buildDevServer(options) : undefined,
     }

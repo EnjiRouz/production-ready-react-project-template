@@ -21,6 +21,11 @@ export interface BuildPaths {
      * Путь к HTML-файлу (например, public/index.html)
      */
     htmlPath: string;
+
+    /**
+     * Путь к папке 'src'
+     */
+    srcPath: string;
 }
 
 /**

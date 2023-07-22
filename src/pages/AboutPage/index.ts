@@ -1,1 +1,1 @@
-export { LazyAboutPage } from './AboutPage.lazy';
+export { LazyAboutPage } from './components/AboutPage.lazy';

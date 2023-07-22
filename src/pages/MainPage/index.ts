@@ -1,1 +1,1 @@
-export { LazyMainPage } from './MainPage.lazy';
+export { LazyMainPage } from './components/MainPage.lazy';
