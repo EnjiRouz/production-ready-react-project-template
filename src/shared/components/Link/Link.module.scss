@@ -1,11 +1,8 @@
-.Link {
-    color: var(--primary-color);
+.Link,
+.Link_color_primary {
+  color: var(--primary-color);
 }
 
-.Link_themeMode_primary {
-    color: var(--primary-color);
-}
-
-.Link_themeMode_secondary {
-    color: var(--inverted-secondary-color);
+.Link_color_secondary {
+  color: var(--inverted-primary-color);
 }

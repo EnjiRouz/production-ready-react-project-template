@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import block from 'bem-css-modules';
+import block from "bem-css-modules";
 
 /**
  * Тип для определения css-модуля
@@ -16,8 +16,12 @@ type Modifiers = Record<string, boolean | string | number | undefined>;
  * @param classNames названия классов элемента
  * @returns классы элемента
  */
-export function mixClassNames(...classNames: (string | undefined | null)[]): string {
-  return classNames.filter((className) => className != null && className.trim() !== "").join(' ');
+export function mixClassNames(
+  ...classNames: (string | undefined | null)[]
+): string {
+  return classNames
+    .filter((className) => className != null && className.trim() !== "")
+    .join(" ");
 }
 
 /**
@@ -29,7 +33,12 @@ export function mixClassNames(...classNames: (string | undefined | null)[]): str
  * @param additionalClassNames дополнительные классы элемента
  * @returns классы элемента
  */
-export function getBemClasses(cssModuleClasses: CssModule, elementName: string = '', modifiers: Modifiers = {}, additionalClassNames: string[] = []): string {
+export function getBemClasses(
+  cssModuleClasses: CssModule,
+  elementName: string = "",
+  modifiers: Modifiers = {},
+  additionalClassNames: string[] = []
+): string {
   const classes = block(cssModuleClasses);
   const bemClasses = classes(elementName, modifiers);
 
@@ -45,8 +54,20 @@ export function getBemClasses(cssModuleClasses: CssModule, elementName: string =
  * @param additionalClassNames дополнительные классы элемента
  * @returns классы элемента
  */
-export function useBemClasses(cssModuleClasses: CssModule, elementName: string = '', modifiers: Modifiers = {}, additionalClassNames: string[] = []): string {
-    return useMemo(() => 
-      getBemClasses(cssModuleClasses, elementName, modifiers, additionalClassNames),
-    [cssModuleClasses, modifiers, additionalClassNames]);
-  }
+export function useBemClasses(
+  cssModuleClasses: CssModule,
+  elementName: string = "",
+  modifiers: Modifiers = {},
+  additionalClassNames: string[] = []
+): string {
+  return useMemo(
+    () =>
+      getBemClasses(
+        cssModuleClasses,
+        elementName,
+        modifiers,
+        additionalClassNames
+      ),
+    [cssModuleClasses, modifiers, additionalClassNames]
+  );
+}

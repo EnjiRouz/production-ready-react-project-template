@@ -1,24 +1,24 @@
 * {
-    margin: 0;
-    padding: 0;
-    border: none;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 a,
 a:link,
 a:visited {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 h1,
@@ -28,19 +28,19 @@ h4,
 h5,
 h6,
 p {
-    font: inherit;
+  font: inherit;
 }
 
 button,
 input,
 textarea,
 select {
-    font: inherit;
-    color: inherit;
-    background-color: transparent;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
 }
 
 ul,
 ul li {
-    list-style: none;
+  list-style: none;
 }

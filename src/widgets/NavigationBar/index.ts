@@ -1,1 +1,1 @@
-export { NavigationBar } from './components/NavigationBar';
+export { NavigationBar } from "./components/NavigationBar";

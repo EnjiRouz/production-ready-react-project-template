@@ -1,0 +1,16 @@
+.Button {
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: var(--border-radius-m);
+}
+
+.Button_color_primary {
+  color: var(--inverted-primary-color);
+  background: var(--primary-color);
+}
+
+.Button_color_secondary {
+  color: var(--secondary-color);
+  background: var(--inverted-secondary-color);
+}

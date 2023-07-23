@@ -1,0 +1,27 @@
+.Icon {
+    display: flex;
+    flex-shrink: 1;
+}
+
+.Icon_color_primary {
+    color: var(--inverted-primary-color);
+}
+
+.Icon_color_secondary {
+    color: var(--primary-color);
+}
+
+.Icon_size_16 {
+  width: 16px;
+  height: 16px;
+}
+
+.Icon_size_24 {
+  width: 24px;
+  height: 24px;
+}
+
+.Icon_size_32 {
+  width: 32px;
+  height: 32px;
+}
