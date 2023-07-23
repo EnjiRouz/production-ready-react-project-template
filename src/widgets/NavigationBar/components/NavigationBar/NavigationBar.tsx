@@ -29,9 +29,7 @@ export const NavigationBar: FC<NavigationBarProps> = memo<NavigationBarProps>(
         data-testid={dataTestId}
       >
         <ThemeSwitcher />
-        <div className={getBemClasses(classes, "Links", {}, [])}>
-          {navigationLinks}
-        </div>
+        <div className={getBemClasses(classes, "Links")}>{navigationLinks}</div>
       </div>
     );
   }

@@ -1,5 +1,5 @@
 module.exports = function (componentName) {
-  return `import { FC, memo, useMemo, useCallback, useRef } from "react";
+  return `import { FC, memo, useMemo, useCallback, useRef, useState } from "react";
 
     import { getBemClasses } from "@/shared/lib/classNameUtils";
     import { BaseProps } from "../types";
