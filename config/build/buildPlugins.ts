@@ -1,8 +1,8 @@
 import HTMLWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { ProgressPlugin, WebpackPluginInstance } from 'webpack';
+import { ProgressPlugin, WebpackPluginInstance, DefinePlugin } from "webpack";
 
-import { BuildOptions } from './types/config';
+import { BuildOptions } from "./types/config";
 
 /**
  * Подготовка конфигурации плагинов для сборки приложения
@@ -10,17 +10,20 @@ import { BuildOptions } from './types/config';
  * @returns конфигурация плагинов для Webpack
  */
 export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
-    const { paths } = options;
-    const { htmlPath } = paths;
+  const { paths, mode } = options;
+  const { htmlPath } = paths;
 
-    return [
-        new HTMLWebpackPlugin({
-            template: htmlPath,
-        }),
-        new ProgressPlugin(),
-        new MiniCssExtractPlugin({
-            filename: 'css/[name].[contenthash:8].css',
-            chunkFilename: 'css/[name].[contenthash:8].css'
-        }),
-    ];
+  return [
+    new HTMLWebpackPlugin({
+      template: htmlPath,
+    }),
+    new ProgressPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "css/[name].[contenthash:8].css",
+      chunkFilename: "css/[name].[contenthash:8].css",
+    }),
+    new DefinePlugin({
+      BUILD_MODE: JSON.stringify(mode),
+    }),
+  ];
 }

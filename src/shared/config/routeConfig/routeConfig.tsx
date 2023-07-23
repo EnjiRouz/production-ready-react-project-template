@@ -44,15 +44,14 @@ export interface RouteData {
 export const routeConfig: Record<Routes, RouteData> = {
   // главная страница
   [Routes.MAIN]: {
-    // TODO добавить переводы названий
-    name: "Main",
+    name: "Главная",
     path: RoutePath.main,
     element: <LazyMainPage />,
   },
 
   // страница "О проекте"
   [Routes.ABOUT]: {
-    name: "About",
+    name: "О проекте",
     path: RoutePath.about,
     element: <LazyAboutPage />,
   },

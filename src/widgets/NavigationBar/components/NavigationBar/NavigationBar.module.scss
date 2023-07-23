@@ -1,6 +1,7 @@
 .NavigationBar {
   display: flex;
   align-items: center;
+  gap: 16px;
 
   width: 100%;
   height: var(--navigation-bar-height);

@@ -2,7 +2,7 @@ module.exports = function (componentName) {
   return `import { FC, memo, useMemo, useCallback, useRef, useState } from "react";
 
     import { getBemClasses } from "@/shared/lib/classNameUtils";
-    import { BaseProps } from "../types";
+    import { BaseProps } from "@/shared/components";
     
     import classes from "./${componentName}.module.scss";
     

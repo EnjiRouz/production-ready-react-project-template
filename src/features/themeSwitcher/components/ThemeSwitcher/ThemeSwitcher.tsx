@@ -1,4 +1,5 @@
 import { FC, memo, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
 import { BaseProps, Button } from "@/shared/components";
 import { Theme, useTheme } from "@/shared/lib/theme";
@@ -17,9 +18,11 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = memo<ThemeSwitcherProps>(
       return theme === Theme.LIGHT ? <MoonIcon /> : <SunIcon />;
     }, [theme]);
 
+    const { t: translate } = useTranslation();
+
     return (
       <Button
-        title="Switch Theme"
+        title={translate("Переключить тему")}
         onClick={toggleTheme}
         className={className}
         data-testid={dataTestId}

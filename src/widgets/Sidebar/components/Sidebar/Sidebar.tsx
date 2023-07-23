@@ -3,7 +3,6 @@ import { FC, memo, useMemo, useCallback, useRef, useState } from "react";
 import { getBemClasses } from "@/shared/lib/classNameUtils";
 import { BaseProps, Button } from "@/shared/components";
 import classes from "./Sidebar.module.scss";
-import { ThemeSwitcher } from "@/features/themeSwitcher/components";
 import { ArrowLeftIcon, ArrowRightIcon } from "@/shared/icons";
 
 export type SidebarProps = Omit<BaseProps, "children"> & {};

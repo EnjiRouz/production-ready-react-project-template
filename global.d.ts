@@ -26,3 +26,5 @@ declare module "*.png";
 declare module "*.jpg";
 
 declare module "*.jpeg";
+
+declare const BUILD_MODE: "production" | "development";
