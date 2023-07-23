@@ -5,7 +5,7 @@ import { mixClassNames } from "@/shared/lib/classNameUtils";
 import { useTheme } from "@/shared/lib/theme";
 import "@/shared/styles";
 
-import { AppRouter } from "./AppRouter";
+import { AppRouter } from "./AppRouter/AppRouter";
 
 const loadingStub = <span>Loading...</span>;
 

@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack serve --env port=3000",
     "build:development": "webpack --env mode=development",
-    "build:production": "webpack --env mode=production"
+    "build:production": "webpack --env mode=production",
+    "create-component":"node ./scripts/component-creator"
   },
   "keywords": [],
   "author": "",
