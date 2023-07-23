@@ -1,5 +1,11 @@
 import { ReactNode } from "react";
-import { TestProps } from "../testTypes";
+
+export interface TestProps {
+    /**
+     * Аттрибут data-testid для элемента
+     */
+    'data-testid'?: string;
+}
 
 export interface BaseProps extends TestProps {
     /**

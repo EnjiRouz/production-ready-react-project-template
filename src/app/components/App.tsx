@@ -1,7 +1,7 @@
 import { FC, memo } from "react";
 
 import { NavigationBar } from "@/widgets/NavigationBar";
-import { classNames } from "@/shared/lib/classNames";
+import { mixClassNames } from "@/shared/lib/classNameUtils";
 import { useTheme } from "@/shared/lib/theme";
 import '@/shared/styles';
 
@@ -13,9 +13,9 @@ export const App: FC = memo(function App() {
     const { theme, toggleTheme } = useTheme();
   
     return (
-      <div className={classNames("App", {}, [theme])}>
-        <button onClick={toggleTheme}>Изменить тему</button>
+      <div className={mixClassNames('App', theme)}>
         <NavigationBar />
+        <button onClick={toggleTheme}>Изменить тему</button>
         <AppRouter/>
       </div>
     );
