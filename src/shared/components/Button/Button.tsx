@@ -10,6 +10,11 @@ type ButtonColor = 'primary' | 'secondary';
 export type ButtonProps = BaseProps &
 ButtonHTMLAttributes<HTMLButtonElement> & {
     /**
+     * Обработчик нажатия на кнопку
+     */
+    onClick: () => void;
+
+    /**
      * Подпись к кнопки при наведении мыши
      */
     title: string;
@@ -25,11 +30,6 @@ ButtonHTMLAttributes<HTMLButtonElement> & {
      * @default false
      */
     isDisabled?: boolean;
-
-    /**
-     * Обработчик нажатия на кнопку
-     */
-    onClick?: () => void;
 };
 
 export const Button: FC<ButtonProps> = memo<ButtonProps>(function Button ({
@@ -55,3 +55,9 @@ export const Button: FC<ButtonProps> = memo<ButtonProps>(function Button ({
         </button>
     );
 });
+
+Button.defaultProps = {
+    color: 'primary',
+    isDisabled: false,
+    'data-testid': 'Button'
+}

@@ -8,8 +8,7 @@ export type LanguageSwitcherProps = Omit<BaseProps, 'children'>;
 export const LanguageSwitcher: FC<LanguageSwitcherProps> =
   memo<LanguageSwitcherProps>(function LanguageSwitcher ({
       className,
-      'data-testid': dataTestId = 'LanguageSwitcher',
-      ...otherProps
+      'data-testid': dataTestId = 'LanguageSwitcher'
   }: LanguageSwitcherProps) {
       const { t: translate, i18n } = useTranslation();
 
@@ -27,7 +26,6 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> =
               onClick={onToggleLanguage}
               className={className}
               data-testid={dataTestId}
-              {...otherProps}
           >
               {flag}
           </Button>

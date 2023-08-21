@@ -38,3 +38,8 @@ export const Link: FC<LinkProps> = memo<LinkProps>(function Link ({
         </ReactRouterDomLink>
     );
 });
+
+Link.defaultProps = {
+    color: 'primary',
+    'data-testid': 'Links'
+}

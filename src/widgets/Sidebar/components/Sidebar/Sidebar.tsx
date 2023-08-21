@@ -6,12 +6,11 @@ import { type BaseProps, Button } from '@/shared/components';
 import classes from './Sidebar.module.scss';
 import { ArrowLeftIcon, ArrowRightIcon } from '@/shared/icons';
 
-export type SidebarProps = Omit<BaseProps, 'children'> & {};
+export type SidebarProps = Omit<BaseProps, 'children'>;
 
 export const Sidebar: FC<SidebarProps> = memo<SidebarProps>(function Sidebar ({
     className,
-    'data-testid': dataTestId = 'Sidebar',
-    ...otherProps
+    'data-testid': dataTestId = 'Sidebar'
 }: SidebarProps) {
     const [collapsed, setCollapsed] = useState(false);
     const onToggleCollapsed = useCallback(() => {
@@ -28,7 +27,6 @@ export const Sidebar: FC<SidebarProps> = memo<SidebarProps>(function Sidebar ({
         <div
             className={getBemClasses(classes, '', { collapsed }, [className])}
             data-testid={dataTestId}
-            {...otherProps}
         >
             <Button
                 title={
