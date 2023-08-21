@@ -12,6 +12,17 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
   const { mode } = options;
   const isDevModeEnabled = mode === "development";
 
+  const babelLoader = {
+    test: /\.(js|ts|jsx|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: "babel-loader",
+      options: {
+        presets: ["@babel/preset-env"],
+      },
+    },
+  };
+
   const typeScriptLoader = {
     test: /\.tsx?$/,
     use: "ts-loader",
@@ -50,5 +61,5 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
     use: "file-loader",
   };
 
-  return [typeScriptLoader, cssLoader, svgLoader, fileLoader];
+  return [babelLoader, typeScriptLoader, cssLoader, svgLoader, fileLoader];
 }
