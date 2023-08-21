@@ -5,9 +5,7 @@
     position: relative;
     width: var(--sidebar-width);
     height: calc(100vh - var(--navigation-bar-height));
-
     background: var(--primary-color);
-    
     transition: width 0.3s;
 }
 
@@ -18,7 +16,6 @@
 .Sidebar__CollapseSwitcher {
     position: absolute;
     bottom: 20px;
-
     display: flex;
     justify-content: center;
 }

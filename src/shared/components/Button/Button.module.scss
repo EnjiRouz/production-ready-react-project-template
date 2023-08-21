@@ -1,25 +1,21 @@
 .Button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  min-width: 48px;
-  height: 32px;  
-
-  padding: 8px 16px;
-
-  border: none;
-  border-radius: var(--border-radius-m);
-
-  cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 48px;
+    height: 32px;  
+    padding: 8px 16px;
+    border: none;
+    border-radius: var(--border-radius-m);
+    cursor: pointer;
 }
 
 .Button_color_primary {
-  color: var(--inverted-primary-color);
-  background: var(--primary-color);
+    color: var(--inverted-primary-color);
+    background: var(--primary-color);
 }
 
 .Button_color_secondary {
-  color: var(--secondary-color);
-  background: var(--inverted-secondary-color);
+    color: var(--secondary-color);
+    background: var(--inverted-secondary-color);
 }

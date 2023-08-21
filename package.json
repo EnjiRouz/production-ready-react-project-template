@@ -9,6 +9,8 @@
     "build:production": "webpack --env mode=production",
     "lint:ts": "eslint --config .eslintrc.json \"src/**/*.{ts,tsx,js,jsx}\"",
     "lint:ts:fix": "eslint --config .eslintrc.json \"src/**/*.{ts,tsx,js,jsx}\" --fix",
+    "lint:scss": "npx stylelint --config .stylelintrc.json \"**/*.scss\"",
+    "lint:scss:fix": "npx stylelint --config .stylelintrc.json \"**/*.scss\" --fix",
     "create-component": "node ./scripts/component-creator"
   },
   "keywords": [],
@@ -39,6 +41,8 @@
     "sass": "^1.64.1",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard-scss": "^10.0.0",
     "ts-loader": "^9.4.4",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6",
