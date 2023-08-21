@@ -1,6 +1,11 @@
-import HTMLWebpackPlugin from 'html-webpack-plugin';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { ProgressPlugin, WebpackPluginInstance, DefinePlugin } from "webpack";
+import HTMLWebpackPlugin from "html-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import {
+  ProgressPlugin,
+  WebpackPluginInstance,
+  DefinePlugin,
+  HotModuleReplacementPlugin,
+} from "webpack";
 
 import { BuildOptions } from "./types/config";
 
@@ -25,5 +30,6 @@ export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
     new DefinePlugin({
       BUILD_MODE: JSON.stringify(mode),
     }),
+    new HotModuleReplacementPlugin(),
   ];
 }

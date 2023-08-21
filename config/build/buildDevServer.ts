@@ -10,8 +10,9 @@ export function buildDevServer(options: BuildOptions): Configuration {
     const { port } = options;
 
     return {
-        port,
-        open: true,
-        historyApiFallback: true,
-    }
+      port,
+      open: true,
+      historyApiFallback: true,
+      hot: true,
+    };
 }
