@@ -24,10 +24,10 @@ const templates = [
     { file: `${componentDirectory}/index.ts`, template: require('./templates/main.js') },
     { directory: `${componentDirectory}/components/` },
     { file: `${componentDirectory}/components/${componentName}.module.scss`, template: require('./templates/scss.js') },
-    { file: `${componentDirectory}/components/${componentName}.tsx`, template: require('./templates/component.js') },
+    { file: `${componentDirectory}/components/${componentName}.tsx`, template: require('./templates/component.js') }
 ];
 
-function createFile(file, template) {
+function createFile (file, template) {
     fs.writeFileSync(file, template);
     console.log(file);
 }
@@ -43,9 +43,10 @@ templates.forEach(item => {
 
 console.log(`Создан компонент в папке ${componentDirectory}`);
 
-// console.log(`Запуск prettier & eslint в папке ${componentDirectory}`);
-
+// console.log(`Запуск Prettier в папке ${componentDirectory}`);
 // exec(`pnpm exec prettier --write '${componentDirectory}/*.{js,jsx,ts,tsx,css,scss,json,yaml,yml,md}'`);
-// exec(`pnpm run eslint --ext .ts,.tsx ${componentDirectory} --fix`);
 
-// console.log('Готово');
+console.log(`Запуск ESLint в папке ${componentDirectory}`);
+exec(`pnpm run eslint --ext .ts,.tsx ${componentDirectory} --fix`);
+
+console.log('Готово');

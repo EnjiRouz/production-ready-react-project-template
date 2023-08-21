@@ -1,30 +1,26 @@
-declare module "*.module.css" {
-  interface IClassNames {
-    [className: string]: string;
-  }
+declare module '*.module.css' {
+    type IClassNames = Record<string, string>;
 
-  const classNames: IClassNames;
-  export = classNames;
+    const classNames: IClassNames;
+    export = classNames;
 }
 
-declare module "*.module.scss" {
-  interface IClassNames {
-    [className: string]: string;
-  }
+declare module '*.module.scss' {
+    type IClassNames = Record<string, string>;
 
-  const classNames: IClassNames;
-  export = classNames;
+    const classNames: IClassNames;
+    export = classNames;
 }
 
-declare module "*.svg" {
-  const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
-  export default content;
+declare module '*.svg' {
+    const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
+    export default content;
 }
 
-declare module "*.png";
+declare module '*.png';
 
-declare module "*.jpg";
+declare module '*.jpg';
 
-declare module "*.jpeg";
+declare module '*.jpeg';
 
-declare const BUILD_MODE: "production" | "development";
+declare const BUILD_MODE: 'production' | 'development';

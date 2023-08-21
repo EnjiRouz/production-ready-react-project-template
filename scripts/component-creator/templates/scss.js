@@ -1,5 +1,5 @@
 module.exports = function (componentName) {
-  return `.${componentName} {
+    return `.${componentName} {
 }
 `;
 };

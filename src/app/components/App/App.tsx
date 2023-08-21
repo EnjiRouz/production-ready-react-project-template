@@ -1,26 +1,24 @@
-import { FC, memo } from "react";
+import { type FC, memo } from 'react';
 
-import { NavigationBar } from "@/widgets/NavigationBar";
-import { getBemClasses } from "@/shared/lib/classNameUtils";
-import { useTheme } from "@/shared/lib/theme";
-import "@/shared/styles";
-import classes from "./App.module.scss";
+import { Sidebar } from '@/widgets/Sidebar';
+import { NavigationBar } from '@/widgets/NavigationBar';
+import { getBemClasses } from '@/shared/lib/classNameUtils';
+import { useTheme } from '@/shared/lib/theme';
+import '@/shared/styles';
 
-import { AppRouter } from "../AppRouter";
-import { Sidebar } from "@/widgets/Sidebar";
+import { AppRouter } from '../AppRouter';
+import classes from './App.module.scss';
 
-const loadingStub = <span>Loading...</span>;
+export const App: FC = memo(function App () {
+    const { theme } = useTheme();
 
-export const App: FC = memo(function App() {
-  const { theme } = useTheme();
-
-  return (
-    <div className={getBemClasses(classes, "", {}, [theme])}>
-      <NavigationBar />
-      <div className={getBemClasses(classes, "PageContent")}>
-        <Sidebar />
-        <AppRouter />
-      </div>
-    </div>
-  );
+    return (
+        <div className={getBemClasses(classes, '', {}, [theme])}>
+            <NavigationBar />
+            <div className={getBemClasses(classes, 'PageContent')}>
+                <Sidebar />
+                <AppRouter />
+            </div>
+        </div>
+    );
 });

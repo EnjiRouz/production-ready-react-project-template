@@ -7,6 +7,8 @@
     "start": "webpack serve --env port=3000",
     "build:development": "webpack --env mode=development",
     "build:production": "webpack --env mode=production",
+    "lint:ts": "eslint \"**/*.{ts,tsx,js,jsx}\"",
+    "lint:ts:fix": "eslint \"**/*.{ts,tsx,js,jsx}\" --fix",
     "create-component": "node ./scripts/component-creator"
   },
   "keywords": [],

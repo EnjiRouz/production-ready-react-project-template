@@ -1,34 +1,34 @@
-import { FC, memo, useMemo } from "react";
-import { useTranslation } from "react-i18next";
+import { type FC, memo, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import { BaseProps, Button } from "@/shared/components";
-import { Theme, useTheme } from "@/shared/lib/theme";
-import { MoonIcon, SunIcon } from "@/shared/icons";
+import { type BaseProps, Button } from '@/shared/components';
+import { Theme, useTheme } from '@/shared/lib/theme';
+import { MoonIcon, SunIcon } from '@/shared/icons';
 
-export interface ThemeSwitcherProps extends Omit<BaseProps, "children"> {}
+export interface ThemeSwitcherProps extends Omit<BaseProps, 'children'> {}
 
 export const ThemeSwitcher: FC<ThemeSwitcherProps> = memo<ThemeSwitcherProps>(
-  function ThemeSwitcher({
-    className,
-    "data-testid": dataTestId = "ThemeSwitcher",
-  }) {
-    const { theme, toggleTheme } = useTheme();
+    function ThemeSwitcher ({
+        className,
+        'data-testid': dataTestId = 'ThemeSwitcher'
+    }: ThemeSwitcherProps) {
+        const { theme, toggleTheme } = useTheme();
 
-    const themeIcon = useMemo(() => {
-      return theme === Theme.LIGHT ? <MoonIcon /> : <SunIcon />;
-    }, [theme]);
+        const themeIcon = useMemo(() => {
+            return theme === Theme.LIGHT ? <MoonIcon /> : <SunIcon />;
+        }, [theme]);
 
-    const { t: translate } = useTranslation();
+        const { t: translate } = useTranslation();
 
-    return (
-      <Button
-        title={translate("Переключить тему")}
-        onClick={toggleTheme}
-        className={className}
-        data-testid={dataTestId}
-      >
-        {themeIcon}
-      </Button>
-    );
-  }
+        return (
+            <Button
+                title={translate('Переключить тему')}
+                onClick={toggleTheme}
+                className={className}
+                data-testid={dataTestId}
+            >
+                {themeIcon}
+            </Button>
+        );
+    }
 );

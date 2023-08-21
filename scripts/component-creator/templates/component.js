@@ -1,5 +1,5 @@
 module.exports = function (componentName) {
-  return `import { FC, memo, useMemo, useCallback, useRef, useState } from "react";
+    return `import { FC, memo, useMemo, useCallback, useRef, useState } from "react";
 
     import { getBemClasses } from "@/shared/lib/classNameUtils";
     import { BaseProps } from "@/shared/components";
@@ -13,7 +13,7 @@ module.exports = function (componentName) {
       className,
       "data-testid": dataTestId = "${componentName}",
       ...otherProps
-    }) {
+    }: ${componentName}Props) {
       return (
         <div className={getBemClasses(classes, "", {}, [className])} data-testid={dataTestId} {...otherProps}>
           {children}

@@ -1,46 +1,46 @@
-import { FC, memo, useMemo, useCallback, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { type FC, memo, useMemo, useCallback, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import { getBemClasses } from "@/shared/lib/classNameUtils";
-import { BaseProps, Button } from "@/shared/components";
-import classes from "./Sidebar.module.scss";
-import { ArrowLeftIcon, ArrowRightIcon } from "@/shared/icons";
+import { getBemClasses } from '@/shared/lib/classNameUtils';
+import { type BaseProps, Button } from '@/shared/components';
+import classes from './Sidebar.module.scss';
+import { ArrowLeftIcon, ArrowRightIcon } from '@/shared/icons';
 
-export type SidebarProps = Omit<BaseProps, "children"> & {};
+export type SidebarProps = Omit<BaseProps, 'children'> & {};
 
-export const Sidebar: FC<SidebarProps> = memo<SidebarProps>(function Sidebar({
-  className,
-  "data-testid": dataTestId = "Sidebar",
-  ...otherProps
-}) {
-  const [collapsed, setCollapsed] = useState(false);
-  const onToggleCollapsed = useCallback(() => {
-    setCollapsed((collapsed) => !collapsed);
-  }, []);
+export const Sidebar: FC<SidebarProps> = memo<SidebarProps>(function Sidebar ({
+    className,
+    'data-testid': dataTestId = 'Sidebar',
+    ...otherProps
+}: SidebarProps) {
+    const [collapsed, setCollapsed] = useState(false);
+    const onToggleCollapsed = useCallback(() => {
+        setCollapsed((collapsed) => !collapsed);
+    }, []);
 
-  const icon = useMemo(() => {
-    return collapsed ? <ArrowRightIcon /> : <ArrowLeftIcon />;
-  }, [collapsed]);
+    const icon = useMemo(() => {
+        return collapsed ? <ArrowRightIcon /> : <ArrowLeftIcon />;
+    }, [collapsed]);
 
-  const { t: translate, i18n } = useTranslation();
+    const { t: translate } = useTranslation();
 
-  return (
-    <div
-      className={getBemClasses(classes, "", { collapsed }, [className])}
-      data-testid={dataTestId}
-      {...otherProps}
-    >
-      <Button
-        title={
-          collapsed
-            ? translate("Развернуть панель")
-            : translate("Свернуть панель")
-        }
-        className={getBemClasses(classes, "CollapseSwitcher")}
-        onClick={onToggleCollapsed}
-      >
-        {icon}
-      </Button>
-    </div>
-  );
+    return (
+        <div
+            className={getBemClasses(classes, '', { collapsed }, [className])}
+            data-testid={dataTestId}
+            {...otherProps}
+        >
+            <Button
+                title={
+                    collapsed
+                        ? translate('Развернуть панель')
+                        : translate('Свернуть панель')
+                }
+                className={getBemClasses(classes, 'CollapseSwitcher')}
+                onClick={onToggleCollapsed}
+            >
+                {icon}
+            </Button>
+        </div>
+    );
 });

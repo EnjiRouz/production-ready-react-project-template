@@ -11,7 +11,7 @@ export interface BuildPaths {
      * Точка входа в приложение (например, src/index.ts)
      */
     entryPath: string;
-    
+
     /**
      * Путь для сохранения итоговой сборки
      */
