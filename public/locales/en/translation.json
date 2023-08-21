@@ -2,5 +2,7 @@
   "Главная": "Main",
   "О проекте": "About",
   "Переключить язык": "Switch Language",
-  "Переключить тему": "Switch Theme"
+  "Переключить тему": "Switch Theme",
+  "Свернуть панель": "Collapse Sidebar",
+  "Развернуть панель": "Expand Sidebar"
 }

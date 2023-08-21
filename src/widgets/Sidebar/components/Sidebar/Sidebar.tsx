@@ -1,4 +1,5 @@
-import { FC, memo, useMemo, useCallback, useRef, useState } from "react";
+import { FC, memo, useMemo, useCallback, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { getBemClasses } from "@/shared/lib/classNameUtils";
 import { BaseProps, Button } from "@/shared/components";
@@ -21,6 +22,8 @@ export const Sidebar: FC<SidebarProps> = memo<SidebarProps>(function Sidebar({
     return collapsed ? <ArrowRightIcon /> : <ArrowLeftIcon />;
   }, [collapsed]);
 
+  const { t: translate, i18n } = useTranslation();
+
   return (
     <div
       className={getBemClasses(classes, "", { collapsed }, [className])}
@@ -28,6 +31,11 @@ export const Sidebar: FC<SidebarProps> = memo<SidebarProps>(function Sidebar({
       {...otherProps}
     >
       <Button
+        title={
+          collapsed
+            ? translate("Развернуть панель")
+            : translate("Свернуть панель")
+        }
         className={getBemClasses(classes, "CollapseSwitcher")}
         onClick={onToggleCollapsed}
       >

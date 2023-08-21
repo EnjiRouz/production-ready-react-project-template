@@ -10,6 +10,11 @@ type ButtonColor = "primary" | "secondary";
 export type ButtonProps = BaseProps &
   ButtonHTMLAttributes<HTMLButtonElement> & {
     /**
+     * Подпись к кнопки при наведении мыши
+     */
+    title: string;
+
+    /**
      * Цветовая тема элемента
      * @default 'primary'
      */
@@ -29,6 +34,7 @@ export type ButtonProps = BaseProps &
 
 export const Button: FC<ButtonProps> = memo<ButtonProps>(function Button({
   children,
+  title,
   onClick,
   isDisabled,
   color = "primary",
@@ -40,6 +46,7 @@ export const Button: FC<ButtonProps> = memo<ButtonProps>(function Button({
     <button
       onClick={onClick}
       disabled={isDisabled}
+      title={title}
       className={getBemClasses(classes, "", { color }, [className])}
       data-testid={dataTestId}
       {...otherProps}
