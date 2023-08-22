@@ -1,7 +1,51 @@
 {
   "extends": "stylelint-config-standard-scss",
+  "plugins": ["stylelint-order"],
   "rules": {
     "indentation": [4],
-    "selector-class-pattern": null
+    "selector-class-pattern": null,
+    "selector-max-id": 0,
+    "unit-allowed-list": ["%", "deg", "px", "vh", "s", "ms"],
+    "declaration-no-important": true,
+    "rule-empty-line-before": "always",
+    "at-rule-empty-line-before": "always",
+    "order/order": [
+      "custom-properties",
+      "dollar-variables",
+      "declarations",
+      "at-rules",
+      "rules"
+    ],
+    "order/properties-order": [
+      "content",
+      "display",
+      "flex",
+      "flex-direction",
+      "justify-content",
+      "align-items",
+      "gap",
+      "position",
+      "top",
+      "right",
+      "bottom",
+      "left",
+      "float",
+      "width",
+      "min-width",
+      "height",
+      "min-height",
+      "margin",
+      "padding",
+      "background",
+      "border",
+      "font-familly",
+      "font-size",
+      "line-height",
+      "font-weight",
+      "font-style",
+      "color",
+      "transform",
+      "transition"
+    ]
   }
 }

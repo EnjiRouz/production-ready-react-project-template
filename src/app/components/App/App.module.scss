@@ -1,9 +1,10 @@
 /* свойства по-умолчанию для всех элементов */
+
 .App {
-    font: var(--font-m);
+    min-height: 100vh;
     background: var(--bg-color);
     color: var(--primary-color);
-    min-height: 100vh;
+    font: var(--font-m);
 }
 
 .App__PageContent {
