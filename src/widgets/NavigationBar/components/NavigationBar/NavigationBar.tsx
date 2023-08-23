@@ -20,11 +20,15 @@ export const NavigationBar: FC<NavigationBarProps> = memo<NavigationBarProps>(
         const currentLanguage = i18n.language;
 
         const navigationLinks = useMemo(() => {
-            return Object.values(routeConfig).map(({ name, path }) => (
-                <Link color="secondary" to={path} key={path}>
-                    {translate(name)}
-                </Link>
-            ));
+            return Object.values(routeConfig).map(({ name, path }) => {
+                if (!name || !path) return null;
+
+                return (
+                    <Link color="secondary" to={path} key={path}>
+                        {translate(name)}
+                    </Link>
+                )
+            });
         }, [currentLanguage]);
 
         return (

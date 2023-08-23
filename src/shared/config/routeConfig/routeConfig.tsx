@@ -1,6 +1,7 @@
 import { type ReactNode } from 'react';
 import { LazyAboutPage } from '@/pages/AboutPage';
 import { LazyMainPage } from '@/pages/MainPage';
+import { LazyNotFoundPage } from '@/pages/NotFoundPage';
 
 /**
  * Перечисление доступных страниц приложения
@@ -8,6 +9,7 @@ import { LazyMainPage } from '@/pages/MainPage';
 export enum Routes {
     MAIN = 'main',
     ABOUT = 'about',
+    NOT_FOUND = 'not_found'
 }
 
 /**
@@ -15,7 +17,8 @@ export enum Routes {
  */
 export const RoutePath: Record<Routes, string> = {
     [Routes.MAIN]: '/',
-    [Routes.ABOUT]: '/about'
+    [Routes.ABOUT]: '/about',
+    [Routes.NOT_FOUND]: '*'
 };
 
 /**
@@ -25,7 +28,7 @@ export interface RouteData {
     /**
      * Название страницы
      */
-    name: string;
+    name?: string;
 
     /**
      * Путь для перехода на страницу
@@ -54,5 +57,11 @@ export const routeConfig: Record<Routes, RouteData> = {
         name: 'О проекте',
         path: RoutePath.about,
         element: <LazyAboutPage />
+    },
+
+    // страница не найдена
+    [Routes.NOT_FOUND]: {
+        path: RoutePath.not_found,
+        element: <LazyNotFoundPage />
     }
 };
