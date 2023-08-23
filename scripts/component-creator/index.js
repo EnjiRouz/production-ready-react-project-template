@@ -16,7 +16,7 @@ console.log(`Создание компонента с названием ${compo
 if (fs.existsSync(componentDirectory)) {
     throw new Error('Компонент с таким именем уже существует');
 } else {
-    fs.mkdirSync(componentDirectory);
+    fs.mkdirSync(componentDirectory, { recursive: true });
 }
 
 // шаблоны файлов компонента
@@ -24,7 +24,9 @@ const templates = [
     { file: `${componentDirectory}/index.ts`, template: require('./templates/main.js') },
     { directory: `${componentDirectory}/components/` },
     { file: `${componentDirectory}/components/${componentName}.module.scss`, template: require('./templates/scss.js') },
-    { file: `${componentDirectory}/components/${componentName}.tsx`, template: require('./templates/component.js') }
+    { file: `${componentDirectory}/components/${componentName}.tsx`, template: require('./templates/component.js') },
+    { file: `${componentDirectory}/components/${componentName}.test.tsx`, template: require('./templates/rtl_unit_test.js') },
+    { file: `${componentDirectory}/components/${componentName}.test.ts`, template: require('./templates/unit_test.js') }
 ];
 
 function createFile (file, template) {
@@ -47,6 +49,6 @@ console.log(`Создан компонент в папке ${componentDirectory}
 // exec(`pnpm exec prettier --write '${componentDirectory}/*.{js,jsx,ts,tsx,css,scss,json,yaml,yml,md}'`);
 
 console.log(`Запуск ESLint в папке ${componentDirectory}`);
-exec(`pnpm run eslint --ext .ts,.tsx ${componentDirectory} --fix`);
+exec(`eslint --ext .ts,.tsx ${componentDirectory} --fix`);
 
 console.log('Готово');

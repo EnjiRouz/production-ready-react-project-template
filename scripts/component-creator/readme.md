@@ -15,4 +15,6 @@
 ./src/widgets/Sidebar/index.ts
 ./src/widgets/Sidebar/Sidebar.module.scss
 ./src/widgets/Sidebar/Sidebar.tsx
+./src/widgets/Sidebar/Sidebar.test.tsx
+./src/widgets/Sidebar/Sidebar.test.ts
 ```
