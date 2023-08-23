@@ -11,17 +11,17 @@
     color: var(--primary-color);
 }
 
-.Icon_size_16 {
-    width: 16px;
-    height: 16px;
+.Icon_size_s {
+    width: var(--icon-size-s);
+    height: var(--icon-size-s);
 }
 
-.Icon_size_24 {
-    width: 24px;
-    height: 24px;
+.Icon_size_m {
+    width: var(--icon-size-m);
+    height: var(--icon-size-m);
 }
 
-.Icon_size_32 {
-    width: 32px;
-    height: 32px;
+.Icon_size_l {
+    width: var(--icon-size-l);
+    height: var(--icon-size-l);
 }

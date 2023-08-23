@@ -2,8 +2,9 @@ import { type FC, Suspense, memo, useMemo } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { routeConfig } from '@/shared/config/routeConfig';
+import { LoadingSpinner } from '@/shared/components/Spinner';
 
-const loadingStub = <span>Loading...</span>;
+const loadingStub = <LoadingSpinner size="l" color="secondary" />;
 
 export const AppRouter: FC = memo(function AppRouter () {
     const routes = useMemo(() => {

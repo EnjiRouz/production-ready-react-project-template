@@ -1,7 +1,7 @@
 import { type BaseProps } from '../components';
 
 type IconColor = 'primary' | 'secondary';
-type IconSize = '16' | '24' | '32';
+type IconSize = 's' | 'm' | 'l';
 
 export interface IconProps extends Omit<BaseProps, 'children'> {
     /**

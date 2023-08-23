@@ -8,7 +8,7 @@ export interface SunIconProps extends IconProps {}
 
 export const SunIcon: FC<SunIconProps> = memo<SunIconProps>(function SunIcon ({
     color = 'primary',
-    size = '16',
+    size = 's',
     className,
     'data-testid': dataTestId = 'SunIcon'
 }: SunIconProps) {

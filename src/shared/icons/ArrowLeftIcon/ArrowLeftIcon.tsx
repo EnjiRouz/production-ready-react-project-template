@@ -9,7 +9,7 @@ export interface ArrowLeftIconProps extends IconProps {}
 export const ArrowLeftIcon: FC<ArrowLeftIconProps> = memo<ArrowLeftIconProps>(
     function ArrowLeftIcon ({
         color = 'primary',
-        size = '16',
+        size = 's',
         className,
         'data-testid': dataTestId = 'ArrowLeftIcon'
     }: ArrowLeftIconProps) {
