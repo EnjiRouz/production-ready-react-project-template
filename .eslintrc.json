@@ -103,7 +103,10 @@
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "warn",
     "react/function-component-definition": "off",
-    "i18next/no-literal-string": ["error", { "markupOnly": true }]
+    "i18next/no-literal-string": [
+      "error",
+      { "markupOnly": true, "ignoreAttribute": ["data-testid"] }
+    ]
   },
   "overrides": [
     {
@@ -111,6 +114,12 @@
       "rules": {
         "@typescript-eslint/no-var-requires": "off",
         "@typescript-eslint/explicit-function-return-type": "off"
+      }
+    },
+    {
+      "files": ["**/src/**/*.test.{ts,tsx}"],
+      "rules": {
+        "i18next/no-literal-string": "off"
       }
     }
   ]
