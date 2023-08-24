@@ -6,6 +6,7 @@ import {
     DefinePlugin,
     HotModuleReplacementPlugin
 } from 'webpack';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 import { type BuildOptions } from './types/config';
 
@@ -30,6 +31,9 @@ export function buildPlugins (options: BuildOptions): WebpackPluginInstance[] {
         new DefinePlugin({
             BUILD_MODE: JSON.stringify(mode)
         }),
-        new HotModuleReplacementPlugin()
+        new HotModuleReplacementPlugin(),
+        new BundleAnalyzerPlugin({
+            openAnalyzer: false
+        })
     ];
 }
