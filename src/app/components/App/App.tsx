@@ -1,12 +1,13 @@
 import { type FC, memo } from 'react';
 
-import { Sidebar } from '@/widgets/Sidebar';
-import { NavigationBar } from '@/widgets/NavigationBar';
 import { getBemClasses } from '@/shared/lib/classNameUtils';
 import { useTheme } from '@/shared/lib/theme';
+import { NavigationBar } from '@/widgets/NavigationBar';
+import { Sidebar } from '@/widgets/Sidebar';
 import '@/shared/styles';
 
 import { AppRouter } from '../AppRouter';
+
 import classes from './App.module.scss';
 
 export const App: FC = memo(function App () {

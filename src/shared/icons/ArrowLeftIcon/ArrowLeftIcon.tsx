@@ -1,6 +1,7 @@
 import { type FC, memo } from 'react';
 
 import { getBemClasses } from '@/shared/lib/classNameUtils';
+
 import { type IconProps } from '../types';
 import classes from '../Icon.module.scss';
 

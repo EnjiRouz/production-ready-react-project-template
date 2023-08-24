@@ -3,6 +3,7 @@ import { type ButtonHTMLAttributes, type FC, memo } from 'react';
 import { getBemClasses } from '@/shared/lib/classNameUtils';
 
 import { type BaseProps } from '../types';
+
 import classes from './Button.module.scss';
 
 type ButtonColor = 'primary' | 'secondary';

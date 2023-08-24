@@ -1,11 +1,11 @@
 import { type FC, memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { LanguageSwitcher } from '@/features/languageSwither/LanguageSwitcher';
+import { LanguageSwitcher } from '@/features/languageSwitcher/LanguageSwitcher';
 import { ThemeSwitcher } from '@/features/themeSwitcher/components';
+import { type BaseProps, Link } from '@/shared/components';
 import { routeConfig } from '@/shared/config/routeConfig';
 import { getBemClasses } from '@/shared/lib/classNameUtils';
-import { type BaseProps, Link } from '@/shared/components';
 
 import classes from './NavigationBar.module.scss';
 

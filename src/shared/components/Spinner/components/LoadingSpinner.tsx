@@ -1,9 +1,9 @@
 import { type FC, memo } from 'react';
 
-import { getBemClasses } from '@/shared/lib/classNameUtils';
 import { type BaseProps } from '@/shared/components';
 import { SpinnerIcon } from '@/shared/icons';
 import { type IconProps } from '@/shared/icons/types';
+import { getBemClasses } from '@/shared/lib/classNameUtils';
 
 import classes from './LoadingSpinner.module.scss';
 

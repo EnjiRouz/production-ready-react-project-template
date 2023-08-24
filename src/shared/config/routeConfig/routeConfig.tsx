@@ -1,4 +1,5 @@
 import { type ReactNode } from 'react';
+
 import { LazyAboutPage } from '@/pages/AboutPage';
 import { LazyMainPage } from '@/pages/MainPage';
 import { LazyNotFoundPage } from '@/pages/NotFoundPage';

@@ -27,6 +27,48 @@
     "import/prefer-default-export": "off",
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "orderImportKind": "asc",
+          "caseInsensitive": true,
+          "order": "asc"
+        },
+        "groups": [
+          ["external", "builtin"],
+          "internal",
+          ["unknown", "object", "type"],
+          "parent",
+          "sibling",
+          "index"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react*",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "redux*",
+            "group": "external"
+          },
+          {
+            "group": "internal",
+            "pattern": "@/**",
+            "position": "after"
+          },
+          {
+            "group": "parent",
+            "pattern": "../**.scss",
+            "position": "after"
+          }
+        ],
+        "distinctGroup": false,
+        "pathGroupsExcludedImportTypes": ["react*", "redux*"],
+        "newlines-between": "always-and-inside-groups"
+      }
+    ],
     "@typescript-eslint/indent": ["error", 4],
     "@typescript-eslint/semi": "off",
     "@typescript-eslint/member-delimiter-style": "off",

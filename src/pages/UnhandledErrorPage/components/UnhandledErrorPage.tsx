@@ -1,8 +1,8 @@
 import { type FC, memo, useCallback, type ErrorInfo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { getBemClasses } from '@/shared/lib/classNameUtils';
 import { Button, type BaseProps } from '@/shared/components';
+import { getBemClasses } from '@/shared/lib/classNameUtils';
 
 // импорт стилей на случай падения работы слоя App
 import { useInvertedTheme } from '@/shared/lib/theme';

@@ -2,8 +2,8 @@ import { type FC, memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { type BaseProps, Button } from '@/shared/components';
-import { Theme, useTheme } from '@/shared/lib/theme';
 import { MoonIcon, SunIcon } from '@/shared/icons';
+import { Theme, useTheme } from '@/shared/lib/theme';
 
 export interface ThemeSwitcherProps extends Omit<BaseProps, 'children'> {}
 

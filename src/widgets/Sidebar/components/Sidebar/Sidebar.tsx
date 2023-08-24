@@ -1,10 +1,11 @@
 import { type FC, memo, useMemo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { getBemClasses } from '@/shared/lib/classNameUtils';
 import { type BaseProps, Button } from '@/shared/components';
-import classes from './Sidebar.module.scss';
 import { ArrowLeftIcon, ArrowRightIcon } from '@/shared/icons';
+import { getBemClasses } from '@/shared/lib/classNameUtils';
+
+import classes from './Sidebar.module.scss';
 
 export type SidebarProps = Omit<BaseProps, 'children'>;
 

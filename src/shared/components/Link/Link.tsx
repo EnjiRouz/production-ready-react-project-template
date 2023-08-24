@@ -7,6 +7,7 @@ import {
 import { getBemClasses } from '@/shared/lib/classNameUtils';
 
 import { type BaseProps } from '../types';
+
 import classes from './Link.module.scss';
 
 type LinkColor = 'primary' | 'secondary';

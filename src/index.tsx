@@ -1,8 +1,8 @@
-import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import { createRoot } from 'react-dom/client';
 
-import { ThemeProvider } from '@/shared/lib/theme';
 import { App, ErrorBoundary } from '@/app';
+import { ThemeProvider } from '@/shared/lib/theme';
 
 import '@/shared/config/i18n';
 
