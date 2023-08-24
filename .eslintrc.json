@@ -19,6 +19,17 @@
   },
   "plugins": ["react", "i18next"],
   "rules": {
+    "max-len": [
+      "error",
+      {
+        "code": 140,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreRegExpLiterals": true
+      }
+    ],
     "indent": ["error", 4],
     "no-shadow": "off",
     "no-unused-vars": "warn",
