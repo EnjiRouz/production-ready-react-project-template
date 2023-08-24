@@ -15,7 +15,9 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = memo<ThemeSwitcherProps>(
         const { theme, toggleTheme } = useTheme();
 
         const themeIcon = useMemo(() => {
-            return theme === Theme.LIGHT ? <MoonIcon /> : <SunIcon />;
+            return theme === Theme.LIGHT
+                ? <MoonIcon data-testid={`${dataTestId}.MoonIcon`}/>
+                : <SunIcon data-testid={`${dataTestId}.SunIcon`}/>;
         }, [theme]);
 
         const { t: translate } = useTranslation();

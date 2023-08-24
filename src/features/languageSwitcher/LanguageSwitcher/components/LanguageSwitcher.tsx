@@ -16,7 +16,7 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> =
       const currentLanguage = i18n.language;
       const flag = currentLanguage === 'ru' ? '🇷🇺' : '🇺🇸';
 
-      const onToggleLanguage = useCallback(() => {
+      const onToggleLanguage = useCallback(async () => {
           // eslint-disable-next-line @typescript-eslint/no-floating-promises -- использование согласно документации i18next
           i18n.changeLanguage(currentLanguage === 'ru' ? 'en' : 'ru');
       }, [i18n, currentLanguage]);

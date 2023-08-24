@@ -1,24 +1,27 @@
 module.exports = function (componentName) {
-    return `import { render, cleanup } from '@testing-library/react';
+    return `import { render, cleanup, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { ${componentName} } from './${componentName}';
 
-let onChange = jest.fn();
+let onClick = jest.fn();
 
 describe('${componentName}', () => {
     beforeEach(() => {
-        onChange = jest.fn();
+        onClick = jest.fn();
 
         const props = {
         };
 
-        render(<${componentName} onChange={onChange} {...props} />);
+        render(<${componentName} onClick={onClick} {...props} />);
     });
 
-    it('Должен TODO', () => {
-        const element = document.querySelector('.${componentName}') as Element;
+    test('Должен TODO', async () => {
+        const element = screen.getByTestId('${componentName}');
         expect(element).toBeInTheDocument();
+
+        await userEvent.click(element);
+        expect(onClick).toBeCalledTimes(1);
     });
 });
 `;

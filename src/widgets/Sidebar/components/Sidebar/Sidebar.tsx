@@ -19,7 +19,9 @@ export const Sidebar: FC<SidebarProps> = memo<SidebarProps>(function Sidebar ({
     }, []);
 
     const icon = useMemo(() => {
-        return collapsed ? <ArrowRightIcon /> : <ArrowLeftIcon />;
+        return collapsed
+            ? <ArrowRightIcon data-testid={`${dataTestId}.CollapseSwitcher.ArrowRightIcon`} />
+            : <ArrowLeftIcon data-testid={`${dataTestId}.CollapseSwitcher.ArrowLeftIcon`}/>;
     }, [collapsed]);
 
     const { t: translate } = useTranslation();
@@ -37,6 +39,7 @@ export const Sidebar: FC<SidebarProps> = memo<SidebarProps>(function Sidebar ({
                 }
                 className={getBemClasses(classes, 'CollapseSwitcher')}
                 onClick={onToggleCollapsed}
+                data-testid={`${dataTestId}.CollapseSwitcher`}
             >
                 {icon}
             </Button>
