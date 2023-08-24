@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react';
-import { type Theme } from './types';
+import { Theme } from './types';
 
 /**
  * Свойства ThemeContext
@@ -32,3 +32,16 @@ export const ThemeContext = createContext<ThemeContextProps>({});
  * Hook для получения контекста для переключения темы приложения
  */
 export const useTheme = (): ThemeContextProps => useContext(ThemeContext);
+
+/**
+ * Hook для получения классов инверсной темы
+ */
+export const useInvertedTheme = (): { theme: Theme } => {
+    const { theme: currentTheme } = useContext(ThemeContext);
+
+    if (!currentTheme) {
+        return { theme: Theme.DARK };
+    }
+
+    return { theme: currentTheme === Theme.DARK ? Theme.LIGHT : Theme.DARK };
+};

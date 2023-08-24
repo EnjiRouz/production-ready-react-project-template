@@ -1,0 +1,18 @@
+.UnhandledErrorPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    height: 100vh;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.UnhandledErrorPage__title {
+    font: var(--font-l);
+}
+
+.UnhandledErrorPage__details {
+    font: var(--font-m);
+}

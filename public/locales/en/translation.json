@@ -4,5 +4,8 @@
   "Переключить язык": "Switch Language",
   "Переключить тему": "Switch Theme",
   "Свернуть панель": "Collapse Sidebar",
-  "Развернуть панель": "Expand Sidebar"
+  "Развернуть панель": "Expand Sidebar",
+  "Произошла непредвиденная ошибка": "Unexpected Error has occurred",
+  "Подробнее об ошибке": "Error Information",
+  "Обновить страницу": "Reload Page"
 }

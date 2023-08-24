@@ -9,7 +9,7 @@ const MainPage: FunctionComponent = memo(function MainPage () {
 
     return (
         <div className={getBemClasses(classes)}>
-            {translate('Главная страница')}
+            <h1 className={getBemClasses(classes, 'title')}>{translate('Главная страница')}</h1>
         </div>
     );
 });

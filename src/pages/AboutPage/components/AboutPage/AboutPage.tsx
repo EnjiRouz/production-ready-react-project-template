@@ -8,7 +8,7 @@ const AboutPage: FunctionComponent = memo(function AboutPage () {
     const { t: translate } = useTranslation('AboutPage');
     return (
         <div className={getBemClasses(classes)}>
-            {translate("Страница 'О проекте'")}
+            <h1 className={getBemClasses(classes, 'title')}>{translate("Страница 'О проекте'")}</h1>
         </div>
     );
 });

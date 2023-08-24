@@ -8,7 +8,7 @@ const NotFoundPage: FunctionComponent = memo(function NotFoundPage () {
     const { t: translate } = useTranslation('NotFoundPage');
     return (
         <div className={getBemClasses(classes)}>
-            {translate('Страница не найдена')}
+            <h1 className={getBemClasses(classes, 'title')}>{translate('Страница не найдена')}</h1>
         </div>
     );
 });

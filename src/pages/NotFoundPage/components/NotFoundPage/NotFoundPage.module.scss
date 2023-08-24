@@ -2,7 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font: var(--font-l);
     flex-grow: 1;
     padding: 20px;
+}
+
+.NotFoundPage__title {
+    font: var(--font-l);
 }
