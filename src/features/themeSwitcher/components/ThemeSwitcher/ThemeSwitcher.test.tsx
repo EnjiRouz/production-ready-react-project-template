@@ -1,13 +1,13 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { renderWithTheme } from '@/shared/lib/tests/renderWithTheme';
+import { renderWithThemeProvider } from '@/shared/lib/testHelpers/unit';
 
 import { ThemeSwitcher } from './ThemeSwitcher';
 
 describe('ThemeSwitcher', () => {
     beforeEach(() => {
-        renderWithTheme(<ThemeSwitcher />);
+        renderWithThemeProvider(<ThemeSwitcher />);
     });
 
     test('Должен отображаться на странице', () => {

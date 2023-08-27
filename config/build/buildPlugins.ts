@@ -1,5 +1,3 @@
-import HTMLWebpackPlugin from 'html-webpack-plugin';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import {
     ProgressPlugin,
     type WebpackPluginInstance,
@@ -7,8 +5,10 @@ import {
     HotModuleReplacementPlugin
 } from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import HTMLWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-import { type BuildOptions } from './types/config';
+import { type BuildOptions } from './types';
 
 /**
  * Подготовка конфигурации плагинов для сборки приложения

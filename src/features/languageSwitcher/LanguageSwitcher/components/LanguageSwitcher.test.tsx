@@ -1,13 +1,13 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { renderWithTranslation } from '@/shared/lib/tests/renderWithTranslation';
+import { renderWithTranslationProvider } from '@/shared/lib/testHelpers/unit';
 
 import { LanguageSwitcher } from './LanguageSwitcher';
 
 describe('LanguageSwitcher', () => {
     beforeEach(() => {
-        renderWithTranslation(<LanguageSwitcher />);
+        renderWithTranslationProvider(<LanguageSwitcher />);
     });
 
     test('Должен отображаться на странице', () => {

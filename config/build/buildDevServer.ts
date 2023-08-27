@@ -1,5 +1,6 @@
 import { type Configuration } from 'webpack-dev-server';
-import { type BuildOptions } from './types/config';
+
+import { type BuildOptions } from './types';
 
 /**
  * Подготовка конфигурации для сборки dev-server

@@ -7,7 +7,8 @@
   "extends": [
     "standard-with-typescript",
     "plugin:react/recommended",
-    "plugin:i18next/recommended"
+    "plugin:i18next/recommended",
+    "plugin:storybook/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -56,6 +57,21 @@
         ],
         "pathGroups": [
           {
+            "pattern": "fs",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "path",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "webpack*",
+            "group": "external",
+            "position": "before"
+          },
+          {
             "pattern": "react*",
             "group": "external",
             "position": "before"
@@ -76,7 +92,13 @@
           }
         ],
         "distinctGroup": false,
-        "pathGroupsExcludedImportTypes": ["react*", "redux*"],
+        "pathGroupsExcludedImportTypes": [
+          "fs",
+          "path",
+          "webpack*",
+          "react*",
+          "redux*"
+        ],
         "newlines-between": "always-and-inside-groups"
       }
     ],
@@ -105,7 +127,10 @@
     "react/function-component-definition": "off",
     "i18next/no-literal-string": [
       "error",
-      { "markupOnly": true, "ignoreAttribute": ["data-testid"] }
+      {
+        "markupOnly": true,
+        "ignoreAttribute": ["data-testid"]
+      }
     ]
   },
   "overrides": [

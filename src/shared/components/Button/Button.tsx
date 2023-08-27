@@ -1,4 +1,4 @@
-import { type ButtonHTMLAttributes, type FC, memo } from 'react';
+import { type FC, memo } from 'react';
 
 import { getBemClasses } from '@/shared/lib/classNameUtils';
 
@@ -8,8 +8,7 @@ import classes from './Button.module.scss';
 
 type ButtonColor = 'primary' | 'secondary';
 
-export type ButtonProps = BaseProps &
-ButtonHTMLAttributes<HTMLButtonElement> & {
+export type ButtonProps = BaseProps & {
     /**
      * Обработчик нажатия на кнопку
      */
@@ -31,6 +30,12 @@ ButtonHTMLAttributes<HTMLButtonElement> & {
      * @default false
      */
     isDisabled?: boolean;
+
+    /**
+     * Тип кнопки
+     * @default 'button'
+     */
+    type?: 'submit' | 'reset' | 'button';
 };
 
 export const Button: FC<ButtonProps> = memo<ButtonProps>(function Button ({
@@ -39,6 +44,7 @@ export const Button: FC<ButtonProps> = memo<ButtonProps>(function Button ({
     onClick,
     isDisabled,
     color = 'primary',
+    type = 'button',
     className,
     'data-testid': dataTestId = 'Button',
     ...otherProps
@@ -48,7 +54,7 @@ export const Button: FC<ButtonProps> = memo<ButtonProps>(function Button ({
             onClick={onClick}
             disabled={isDisabled}
             title={title}
-            className={getBemClasses(classes, '', { color }, [className])}
+            className={getBemClasses(classes, '', { color, disabled: isDisabled }, [className])}
             data-testid={dataTestId}
             {...otherProps}
         >
@@ -58,6 +64,7 @@ export const Button: FC<ButtonProps> = memo<ButtonProps>(function Button ({
 });
 
 Button.defaultProps = {
+    type: 'button',
     color: 'primary',
     isDisabled: false,
     'data-testid': 'Button'

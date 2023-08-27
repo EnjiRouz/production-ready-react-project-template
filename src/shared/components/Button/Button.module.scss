@@ -17,6 +17,14 @@
 }
 
 .Button_color_secondary {
-    background: var(--inverted-secondary-color);
-    color: var(--secondary-color);
+    background: var(--secondary-color);
+    color: var(--inverted-secondary-color);
+}
+
+/* TODO обновить цвета дизайн-системы */
+
+.Button_disabled.Button_color_primary,
+.Button_disabled.Button_color_secondary {
+    background: var(--primary-color);
+    color: var(--inverted-primary-color);
 }

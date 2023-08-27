@@ -1,6 +1,6 @@
-const fs = require('fs');
-const { resolve } = require('path');
-const { exec } = require('node:child_process');
+import { existsSync, mkdirSync, writeFileSync } from 'fs';
+import { resolve } from 'path';
+import { exec } from 'node:child_process';
 
 const argv = process.argv.slice(2);
 const rawComponentName = argv[0];
@@ -13,10 +13,10 @@ const componentName = rawComponentName[0].toUpperCase() + rawComponentName.slice
 const componentDirectory = resolve(__dirname, `../../${pathToCreateComponent}/${componentName}`);
 console.log(`Создание компонента с названием ${componentName} в папке ${componentDirectory}`);
 
-if (fs.existsSync(componentDirectory)) {
+if (existsSync(componentDirectory)) {
     throw new Error('Компонент с таким именем уже существует');
 } else {
-    fs.mkdirSync(componentDirectory, { recursive: true });
+    mkdirSync(componentDirectory, { recursive: true });
 }
 
 // шаблоны файлов компонента
@@ -26,20 +26,21 @@ const templates = [
     { file: `${componentDirectory}/components/${componentName}.module.scss`, template: require('./templates/scss.js') },
     { file: `${componentDirectory}/components/${componentName}.tsx`, template: require('./templates/component.js') },
     { file: `${componentDirectory}/components/${componentName}.test.tsx`, template: require('./templates/rtl_unit_test.js') },
-    { file: `${componentDirectory}/components/${componentName}.test.ts`, template: require('./templates/unit_test.js') }
+    { file: `${componentDirectory}/components/${componentName}.test.ts`, template: require('./templates/unit_test.js') },
+    { file: `${componentDirectory}/components/${componentName}.stories.tsx`, template: require('./templates/stories.js') }
 ];
 
 function createFile (file, template) {
-    fs.writeFileSync(file, template);
+    writeFileSync(file, template);
     console.log(file);
 }
 
 // создание файлов компонента по шаблонам
 templates.forEach(item => {
     if (item.directory) {
-        fs.mkdirSync(item.directory);
+        mkdirSync(item.directory);
     } else {
-        createFile(item.file, item.template(componentName));
+        createFile(item.file, item.template(componentName, pathToCreateComponent.replace('src/', '')));
     }
 });
 

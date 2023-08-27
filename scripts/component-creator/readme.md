@@ -17,4 +17,5 @@
 ./src/widgets/Sidebar/Sidebar.tsx
 ./src/widgets/Sidebar/Sidebar.test.tsx
 ./src/widgets/Sidebar/Sidebar.test.ts
+./src/widgets/Sidebar/Sidebar.stories.tsx
 ```

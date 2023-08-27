@@ -1,5 +1,6 @@
 import { type ResolveOptions } from 'webpack';
-import { type BuildOptions } from './types/config';
+
+import { type BuildOptions } from './types';
 
 /**
  * Подготовка конфигурации resolvers для сборки приложения
