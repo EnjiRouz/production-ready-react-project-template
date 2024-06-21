@@ -42,10 +42,12 @@ export interface RouteData {
     element: ReactNode;
 }
 
+export type RouteConfig = Record<Routes, RouteData>;
+
 /**
  * Страницы приложения
  */
-export const routeConfig: Record<Routes, RouteData> = {
+export const routeConfig: RouteConfig = {
     // главная страница
     [Routes.MAIN]: {
         name: 'Главная',

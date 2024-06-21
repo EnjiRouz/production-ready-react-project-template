@@ -15,7 +15,7 @@ type LinkColor = 'white' | 'blue';
 export interface LinkProps extends BaseProps, ReactRouterDomLinkProps {
     /**
      * Цветовая тема элемента
-     * @default 'primary'
+     * @default 'white'
      */
     color?: LinkColor;
 

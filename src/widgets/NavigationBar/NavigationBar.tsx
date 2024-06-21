@@ -4,19 +4,29 @@ import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher } from '@/features/languageSwitcher';
 import { ThemeSwitcher } from '@/features/themeSwitcher';
 import { type BaseProps, Link } from '@/shared/components';
-import { routeConfig } from '@/shared/config/routeConfig';
 import { getBemClasses } from '@/shared/lib/classNameUtils';
 
 import classes from './NavigationBar.module.scss';
 
 // TODO добавить stories и test
 
-export interface NavigationBarProps extends Omit<BaseProps, 'children'> {}
+type NavigationBarRouteConfig = Record<string, {
+    name?: string,
+    path?: string,
+}>;
+
+export interface NavigationBarProps extends Omit<BaseProps, 'children'> {
+    /**
+     * Страницы приложения
+     */
+    routeConfig: NavigationBarRouteConfig,
+}
 
 export const NavigationBar: FC<NavigationBarProps> = memo<NavigationBarProps>(
     function NavigationBar ({
         className,
-        'data-testid': dataTestId = 'NavigationBar'
+        'data-testid': dataTestId = 'NavigationBar',
+        routeConfig
     }: NavigationBarProps) {
         const { t: translate } = useTranslation();
 
@@ -32,7 +42,7 @@ export const NavigationBar: FC<NavigationBarProps> = memo<NavigationBarProps>(
                     </Link>
                 )
             });
-        }, [translate]);
+        }, [routeConfig, translate]);
 
         return (
             <div

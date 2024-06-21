@@ -9,7 +9,8 @@
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:i18next/recommended",
-    "plugin:storybook/recommended"
+    "plugin:storybook/recommended",
+    "plugin:@conarti/feature-sliced/rules"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -135,7 +136,10 @@
         "markupOnly": true,
         "ignoreAttribute": ["data-testid"]
       }
-    ]
+    ],
+    "@conarti/feature-sliced/layers-slices": "error",
+    "@conarti/feature-sliced/absolute-relative": "off",
+    "@conarti/feature-sliced/public-api": "off"
   },
   "overrides": [
     {

@@ -1,21 +1,43 @@
-import { type FC, Suspense, memo, useMemo } from 'react';
+import { type FC, Suspense, memo, useMemo, type ReactNode } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { LoadingSpinner } from '@/shared/components';
-import { routeConfig } from '@/shared/config/routeConfig';
 
 const loadingStub = <LoadingSpinner size="l" color="blue" />;
 
-export const AppRouter: FC = memo(function AppRouter () {
-    const routes = useMemo(() => {
-        return Object.values(routeConfig).map(({ path, element }) => (
-            <Route path={path} element={element} key={path} />
-        ));
-    }, []);
+type AppRouterRouteConfig = Record<string, {
+    /**
+     * Путь для перехода на страницу
+     */
+    path: string;
 
-    return (
-        <Suspense fallback={loadingStub}>
-            <Routes>{routes}</Routes>
-        </Suspense>
-    );
-});
+    /**
+     * React-компонент для отображения страницы
+     */
+    element: ReactNode;
+}>;
+
+export interface AppRouterProps {
+    /**
+     * Страницы приложения
+     */
+    routeConfig: AppRouterRouteConfig,
+}
+
+export const AppRouter: FC<AppRouterProps> = memo<AppRouterProps>(
+    function AppRouter ({
+        routeConfig
+    }: AppRouterProps) {
+        const routes = useMemo(() => {
+            return Object.values(routeConfig).map(({ path, element }) => (
+                <Route path={path} element={element} key={path} />
+            ));
+        }, [routeConfig]);
+
+        return (
+            <Suspense fallback={loadingStub}>
+                <Routes>{routes}</Routes>
+            </Suspense>
+        );
+    }
+);

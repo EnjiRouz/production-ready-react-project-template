@@ -21,3 +21,8 @@ export const LoadingSpinner: FC<LoadingSpinnerProps> = memo<LoadingSpinnerProps>
         </div>
     );
 });
+
+LoadingSpinner.defaultProps = {
+    color: 'blue',
+    'data-testid': 'LoadingSpinner'
+}
