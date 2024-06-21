@@ -12,10 +12,9 @@
 
 ```bash
 # файлы в папке компонента
-./src/widgets/Sidebar/index.ts
-./src/widgets/Sidebar/Sidebar.module.scss
-./src/widgets/Sidebar/Sidebar.tsx
-./src/widgets/Sidebar/Sidebar.test.tsx
-./src/widgets/Sidebar/Sidebar.test.ts
-./src/widgets/Sidebar/Sidebar.stories.tsx
-```
+./src/widgets/Sidebar/index.ts // заготовка для экспорта модуля с компонентом
+./src/widgets/Sidebar/Sidebar.module.scss // заготовка для SCSS-модуля
+./src/widgets/Sidebar/Sidebar.tsx // заготовка для компонента
+./src/widgets/Sidebar/Sidebar.test.tsx // заготовка для RTL-тестов (react-testing-library)
+./src/widgets/Sidebar/Sidebar.test.ts // заготовка для unit-тестов (можно переименовать или удалить, если не требуется)
+./src/widgets/Sidebar/Sidebar.stories.tsx // заготовка для Storybook и скриншотных тестов

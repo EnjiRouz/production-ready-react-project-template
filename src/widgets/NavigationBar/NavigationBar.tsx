@@ -9,6 +9,8 @@ import { getBemClasses } from '@/shared/lib/classNameUtils';
 
 import classes from './NavigationBar.module.scss';
 
+// TODO добавить stories и test
+
 export interface NavigationBarProps extends Omit<BaseProps, 'children'> {}
 
 export const NavigationBar: FC<NavigationBarProps> = memo<NavigationBarProps>(

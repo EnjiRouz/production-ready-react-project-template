@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import block from 'bem-css-modules';
 
 /**
@@ -43,31 +42,4 @@ export function getBemClasses (
     const bemClasses = classes(elementName, modifiers);
 
     return mixClassNames(bemClasses, ...additionalClassNames);
-}
-
-/**
- * Генерация названий классов элемента по методологии БЭМ
- * Документация по БЭМ: https://ru.bem.info/methodology/quick-start/
- * @param cssModuleClasses css-модуль, в котором находятся определения классов элемента
- * @param elementName название элемента
- * @param modifiers модификаторы элемента
- * @param additionalClassNames дополнительные классы элемента
- * @returns классы элемента
- */
-export function useBemClasses (
-    cssModuleClasses: CssModule,
-    elementName: string = '',
-    modifiers: Modifiers = {},
-    additionalClassNames: string[] = []
-): string {
-    return useMemo(
-        () =>
-            getBemClasses(
-                cssModuleClasses,
-                elementName,
-                modifiers,
-                additionalClassNames
-            ),
-        [cssModuleClasses, modifiers, additionalClassNames]
-    );
 }

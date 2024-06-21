@@ -7,6 +7,8 @@ import { getBemClasses } from '@/shared/lib/classNameUtils';
 
 import classes from './Sidebar.module.scss';
 
+// TODO добавить stories и test
+
 export type SidebarProps = Omit<BaseProps, 'children'>;
 
 export const Sidebar: FC<SidebarProps> = memo<SidebarProps>(function Sidebar ({

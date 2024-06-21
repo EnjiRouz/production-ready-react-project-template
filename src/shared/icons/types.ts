@@ -16,3 +16,5 @@ export interface IconProps extends Omit<BaseProps, 'children'> {
      */
     size?: IconSize;
 }
+
+// TODO добавить сгенерированные под все иконки stories

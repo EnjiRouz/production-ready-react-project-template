@@ -1,7 +1,7 @@
 /* eslint-disable no-console -- здесь используются служебные логи */
-import { existsSync, mkdirSync, writeFileSync } from 'fs';
-import { resolve } from 'path';
-import { exec } from 'node:child_process';
+const { existsSync, mkdirSync, writeFileSync } = require('fs');
+const { resolve } = require('path');
+const { exec } = require('node:child_process');
 
 const argv = process.argv.slice(2);
 const rawComponentName = argv[0];
@@ -22,14 +22,12 @@ if (existsSync(componentDirectory)) {
 
 // шаблоны файлов компонента
 const templates = [
-    { file: `${componentDirectory}/index.ts`, template: require('./templates/main.js') },
-    { directory: `${componentDirectory}/components/` },
-    { file: `${componentDirectory}/components/${componentName}.module.scss`, template: require('./templates/scss.js') },
-    { file: `${componentDirectory}/components/${componentName}.tsx`, template: require('./templates/component.js') },
-    { file: `${componentDirectory}/components/${componentName}.test.tsx`, template: require('./templates/rtl_unit_test.js') },
-    { file: `${componentDirectory}/components/${componentName}.test.ts`, template: require('./templates/unit_test.js') },
-    { file: `${componentDirectory}/components/${componentName}.stories.tsx`, template: require('./templates/stories.js') },
-    { file: `${componentDirectory}/components/${componentName}.index.ts`, template: require('./templates/index_file.js') }
+    { file: `${componentDirectory}/${componentName}.module.scss`, template: require('./templates/scss.js') },
+    { file: `${componentDirectory}/${componentName}.tsx`, template: require('./templates/component.js') },
+    { file: `${componentDirectory}/${componentName}.test.tsx`, template: require('./templates/rtl_unit_test.js') },
+    { file: `${componentDirectory}/${componentName}.test.ts`, template: require('./templates/unit_test.js') },
+    { file: `${componentDirectory}/${componentName}.stories.tsx`, template: require('./templates/stories.js') },
+    { file: `${componentDirectory}/${componentName}.index.ts`, template: require('./templates/main.js') }
 ];
 
 function createFile (file, template) {

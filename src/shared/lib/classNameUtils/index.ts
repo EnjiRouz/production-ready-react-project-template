@@ -1,1 +1,1 @@
-export { mixClassNames, getBemClasses, useBemClasses } from './classNameUtils';
+export { mixClassNames, getBemClasses } from './classNameUtils';
