@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:app": "webpack serve --env port=3000",
+    "start:app": "webpack serve --env port=3000 isAnalyzeBundleEnabled=false",
     "start:storybook": "storybook dev --port 6006 --config-dir ./config/storybook --disable-telemetry",
-    "build:app:development": "webpack --env mode=development",
-    "build:app:production": "webpack --env mode=production",
+    "build:app:development": "webpack --env mode=development isAnalyzeBundleEnabled=false",
+    "build:app:production": "webpack --env mode=production isAnalyzeBundleEnabled=false",
     "build:storybook": "storybook build --config-dir ./config/storybook --output-dir build/storybook --disable-telemetry",
     "lint:ts": "eslint --config .eslintrc.json \"src/**/*.{ts,tsx,js,jsx}\"",
     "lint:ts:fix": "eslint --config .eslintrc.json \"src/**/*.{ts,tsx,js,jsx}\" --fix",

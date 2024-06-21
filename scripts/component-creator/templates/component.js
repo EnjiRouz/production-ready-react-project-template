@@ -11,11 +11,10 @@ module.exports = function (componentName) {
     export const ${componentName}: FC<${componentName}Props> = memo<${componentName}Props>(function ${componentName}({
       children,
       className,
-      "data-testid": dataTestId = "${componentName}",
-      ...otherProps
+      "data-testid": dataTestId = "${componentName}"
     }: ${componentName}Props) {
       return (
-        <div className={getBemClasses(classes, "", {}, [className])} data-testid={dataTestId} {...otherProps}>
+        <div className={getBemClasses(classes, "", {}, [className])} data-testid={dataTestId}>
           {children}
         </div>
       );

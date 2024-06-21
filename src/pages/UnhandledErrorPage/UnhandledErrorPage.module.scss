@@ -3,9 +3,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 16px;
+    gap: var(--gap-m);
     height: 100vh;
-    padding: 20px;
+    padding: var(--padding-l);
     flex-grow: 1;
 }
 

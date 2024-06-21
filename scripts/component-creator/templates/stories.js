@@ -21,7 +21,10 @@ module.exports = function (componentName, componentFilePath) {
         args: {
             primary: true,
         },
-        decorators: [withTheme(Theme.DARK)]
+        decorators: [withTheme(Theme.DARK)],
+        parameters: {
+            backgrounds: { default: 'dark' }
+        }
     };
 `;
 };

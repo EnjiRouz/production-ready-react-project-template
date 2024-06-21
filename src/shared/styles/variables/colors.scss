@@ -1,0 +1,90 @@
+.Theme_dark, .Theme_light {   
+    /* Цвета текста */
+    --text-color-strict-black-primary: var(--color-strict-gray-800);
+    --text-color-strict-black-secondary: var(--color-strict-gray-060);
+    --text-color-gray-primary: var(--color-gray-080);
+    --text-color-gray-secondary: var(--color-gray-060);
+    --text-color-gray-2-primary: var(--color-gray-050);
+    --text-color-gray-2-secondary: var(--color-gray-050);
+    --text-color-red-primary: var(--color-red-100);
+    --text-color-red-secondary: var(--color-red-060);
+    --text-color-green-primary: var(--color-green-100);
+    --text-color-green-secondary: var(--color-green-060);
+    --text-color-blue-primary: var(--color-blue-100);
+    --text-color-blue-secondary: var(--color-blue-060);
+    --text-color-purple-primary: var(--color-purple-100);
+    --text-color-purple-secondary: var(--color-purple-060);
+    --text-color-yellow-primary: var(--color-yellow-300);
+    --text-color-yellow-secondary: var(--color-yellow-060);
+    --text-color-yellow-2-primary: var(--color-yellow-100);
+    --text-color-yellow-2-secondary: var(--color-yellow-060);
+    --text-color-white-primary: var(--color-white-100);
+    --text-color-white-secondary: var(--color-white-060);
+
+    /* Цвета иконок */
+    --icon-color-strict-black-primary: var(--color-strict-gray-800);
+    --icon-color-strict-black-secondary: var(--color-strict-gray-050);
+    --icon-color-gray-primary: var(--color-gray-080);
+    --icon-color-gray-secondary: var(--color-gray-050);
+    --icon-color-gray-2-primary: var(--color-gray-040);
+    --icon-color-gray-2-secondary: var(--color-gray-040);
+    --icon-color-red-primary: var(--color-red-100);
+    --icon-color-red-secondary: var(--color-red-060);
+    --icon-color-green-primary: var(--color-green-100);
+    --icon-color-green-secondary: var(--color-green-060);
+    --icon-color-blue-primary: var(--color-blue-100);
+    --icon-color-blue-secondary: var(--color-blue-060);
+    --icon-color-purple-primary: var(--color-purple-100);
+    --icon-color-purple-secondary: var(--color-purple-060);
+    --icon-color-yellow-primary: var(--color-yellow-300);
+    --icon-color-yellow-secondary: var(--color-yellow-060);
+    --icon-color-yellow-2-primary: var(--color-yellow-100);
+    --icon-color-yellow-2-secondary: var(--color-yellow-060);
+    --icon-color-white-primary: var(--color-white-100);
+    --icon-color-white-secondary: var(--color-white-060);
+ 
+    /* Цвета background */
+    --background-color-white: var(--color-white-100);
+    --background-color-black: var(--color-gray-080);
+    --background-color-transparent: var(--color-strict-transparent);
+    --background-color-gray: var(--color-gray-020);
+    --background-color-gray-1: var(--color-gray-080);
+    --background-color-gray-2: var(--color-gray-030);
+    --background-color-gray-3: var(--color-gray-020);
+    --background-color-gray-4: var(--color-gray-300);
+    --background-color-gray-5: var(--color-gray-200);
+    --background-color-red: var(--color-red-010);
+    --background-color-red-2: var(--color-red-100);
+    --background-color-green: var(--color-green-010);
+    --background-color-green-2: var(--color-green-100);
+    --background-color-green-3: var(--color-green-030);
+    --background-color-blue: var(--color-blue-010);
+    --background-color-blue-2: var(--color-blue-100);
+    --background-color-purple: var(--color-purple-100);
+    --background-color-purple-1: var(--color-purple-200);
+    --background-color-purple-2: var(--color-purple-100);
+    --background-color-purple-3: var(--color-purple-020);
+    --background-color-yellow: var(--color-yellow-100);
+    --background-color-yellow-2: var(--color-yellow-200);    
+
+    /* Цвета border */
+    --border-color-white: var(--color-white-100);
+    --border-color-black: var(--color-gray-080);
+    --border-color-transparent: var(--color-strict-transparent);
+    --border-color-gray: var(--color-gray-030);
+    --border-color-gray-1: var(--color-gray-080);
+    --border-color-gray-2: var(--color-gray-030);
+    --border-color-gray-3: var(--color-gray-040);
+    --border-color-red: var(--color-red-040);
+    --border-color-red-2: var(--color-red-100);
+    --border-color-green: var(--color-green-060);
+    --border-color-green-2: var(--color-green-060);
+    --border-color-green-3: var(--color-green-060);
+    --border-color-blue: var(--color-blue-060);
+    --border-color-blue-2: var(--color-blue-100);
+    --border-color-purple: var(--color-purple-100);
+    --border-color-purple-1: var(--color-purple-100);
+    --border-color-purple-2: var(--color-purple-030);
+    --border-color-yellow: var(--color-yellow-300);
+    --border-color-yellow-2: var(--color-yellow-300);
+}

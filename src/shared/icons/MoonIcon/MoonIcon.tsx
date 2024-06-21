@@ -9,7 +9,7 @@ export interface MoonIconProps extends IconProps {}
 
 export const MoonIcon: FC<MoonIconProps> = memo<MoonIconProps>(
     function MoonIcon ({
-        color = 'primary',
+        color = 'blue',
         size = 's',
         className,
         'data-testid': dataTestId = 'MoonIcon'

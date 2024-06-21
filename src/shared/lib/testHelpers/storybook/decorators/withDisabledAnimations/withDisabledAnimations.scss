@@ -1,0 +1,9 @@
+/* stylelint-disable declaration-no-important -- отключение стилей компонентов */
+
+*,
+*::before,
+*::after {
+    transition: none !important;
+    animation-play-state: paused !important;
+    caret-color: transparent;
+}

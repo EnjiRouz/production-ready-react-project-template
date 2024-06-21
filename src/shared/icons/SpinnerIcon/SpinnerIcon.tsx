@@ -9,7 +9,7 @@ export interface SpinnerIconProps extends IconProps {}
 
 export const SpinnerIcon: FC<SpinnerIconProps> = memo<SpinnerIconProps>(
     function SpinnerIcon ({
-        color = 'primary',
+        color = 'blue',
         size = 's',
         className,
         'data-testid': dataTestId = 'SpinnerIcon'

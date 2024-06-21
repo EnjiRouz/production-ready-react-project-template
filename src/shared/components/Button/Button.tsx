@@ -6,7 +6,7 @@ import { type BaseProps } from '../types';
 
 import classes from './Button.module.scss';
 
-type ButtonColor = 'primary' | 'secondary';
+type ButtonColor = 'white' | 'blue';
 
 export type ButtonProps = BaseProps & {
     /**
@@ -15,13 +15,13 @@ export type ButtonProps = BaseProps & {
     onClick: () => void;
 
     /**
-     * Подпись к кнопки при наведении мыши
+     * Подпись к кнопке при наведении мыши
      */
     title: string;
 
     /**
      * Цветовая тема элемента
-     * @default 'primary'
+     * @default 'white'
      */
     color?: ButtonColor;
 
@@ -43,20 +43,19 @@ export const Button: FC<ButtonProps> = memo<ButtonProps>(function Button ({
     title,
     onClick,
     isDisabled,
-    color = 'primary',
+    color = 'white',
     type = 'button',
     className,
-    'data-testid': dataTestId = 'Button',
-    ...otherProps
+    'data-testid': dataTestId = 'Button'
 }: ButtonProps) {
     return (
         <button
             onClick={onClick}
             disabled={isDisabled}
             title={title}
+            type={type}
             className={getBemClasses(classes, '', { color, disabled: isDisabled }, [className])}
             data-testid={dataTestId}
-            {...otherProps}
         >
             {children}
         </button>
@@ -65,7 +64,7 @@ export const Button: FC<ButtonProps> = memo<ButtonProps>(function Button ({
 
 Button.defaultProps = {
     type: 'button',
-    color: 'primary',
+    color: 'white',
     isDisabled: false,
     'data-testid': 'Button'
 }

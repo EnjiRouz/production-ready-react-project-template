@@ -1,3 +1,4 @@
+/* eslint-disable no-console -- здесь используются служебные логи */
 import { existsSync, mkdirSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
 import { exec } from 'node:child_process';
@@ -27,7 +28,8 @@ const templates = [
     { file: `${componentDirectory}/components/${componentName}.tsx`, template: require('./templates/component.js') },
     { file: `${componentDirectory}/components/${componentName}.test.tsx`, template: require('./templates/rtl_unit_test.js') },
     { file: `${componentDirectory}/components/${componentName}.test.ts`, template: require('./templates/unit_test.js') },
-    { file: `${componentDirectory}/components/${componentName}.stories.tsx`, template: require('./templates/stories.js') }
+    { file: `${componentDirectory}/components/${componentName}.stories.tsx`, template: require('./templates/stories.js') },
+    { file: `${componentDirectory}/components/${componentName}.index.ts`, template: require('./templates/index_file.js') }
 ];
 
 function createFile (file, template) {
@@ -46,6 +48,7 @@ templates.forEach(item => {
 
 console.log(`Создан компонент в папке ${componentDirectory}`);
 
+// TODO поставить и настроить конфиг prettier
 // console.log(`Запуск Prettier в папке ${componentDirectory}`);
 // exec(`pnpm exec prettier --write '${componentDirectory}/*.{js,jsx,ts,tsx,css,scss,json,yaml,yml,md}'`);
 

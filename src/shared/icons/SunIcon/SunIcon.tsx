@@ -8,7 +8,7 @@ import classes from '../Icon.module.scss';
 export interface SunIconProps extends IconProps {}
 
 export const SunIcon: FC<SunIconProps> = memo<SunIconProps>(function SunIcon ({
-    color = 'primary',
+    color = 'blue',
     size = 's',
     className,
     'data-testid': dataTestId = 'SunIcon'

@@ -5,7 +5,7 @@
     position: relative;
     width: var(--sidebar-width);
     height: calc(100vh - var(--navigation-bar-height));
-    background: var(--primary-color);
+    background: var(--background-color-blue);
     transition: width 0.3s;
 }
 

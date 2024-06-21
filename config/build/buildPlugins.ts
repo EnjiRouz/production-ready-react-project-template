@@ -16,7 +16,7 @@ import { type BuildOptions } from './types';
  * @returns конфигурация плагинов для Webpack
  */
 export function buildPlugins (options: BuildOptions): WebpackPluginInstance[] {
-    const { paths, mode } = options;
+    const { paths, mode, isAnalyzeBundleEnabled } = options;
     const { htmlPath } = paths;
 
     return [
@@ -33,7 +33,7 @@ export function buildPlugins (options: BuildOptions): WebpackPluginInstance[] {
         }),
         new HotModuleReplacementPlugin(),
         new BundleAnalyzerPlugin({
-            openAnalyzer: false
+            openAnalyzer: isAnalyzeBundleEnabled === 'true'
         })
     ];
 }

@@ -10,7 +10,7 @@ import { type BaseProps } from '../types';
 
 import classes from './Link.module.scss';
 
-type LinkColor = 'primary' | 'secondary';
+type LinkColor = 'white' | 'blue';
 
 export interface LinkProps extends BaseProps, ReactRouterDomLinkProps {
     /**
@@ -18,22 +18,30 @@ export interface LinkProps extends BaseProps, ReactRouterDomLinkProps {
      * @default 'primary'
      */
     color?: LinkColor;
+
+    /**
+     * Подпись к ссылке при наведении мыши
+     */
+    title: string;
 }
 
 export const Link: FC<LinkProps> = memo<LinkProps>(function Link ({
     children,
     to,
-    color = 'primary',
+    color = 'white',
+    title,
     className,
-    'data-testid': dataTestId = 'Link',
-    ...otherProps
+    'data-testid': dataTestId = 'Link'
 }: LinkProps) {
+    // TODO сделать отдельные ссылки для Router и для обычных ссылок
+    // TODO добавить isDisabled и onClick
+
     return (
         <ReactRouterDomLink
             to={to}
+            title={title}
             className={getBemClasses(classes, '', { color }, [className])}
             data-testid={dataTestId}
-            {...otherProps}
         >
             {children}
         </ReactRouterDomLink>
@@ -41,6 +49,6 @@ export const Link: FC<LinkProps> = memo<LinkProps>(function Link ({
 });
 
 Link.defaultProps = {
-    color: 'primary',
+    color: 'white',
     'data-testid': 'Links'
 }

@@ -1,8 +1,22 @@
-.Link,
-.Link_color_primary {
-    color: var(--primary-color);
+.Link {
+    box-sizing: border-box;
+    font: var(--font-m);
+    transition: var(--transition-change-animation);
+    border-bottom: 1px solid transparent;
 }
 
-.Link_color_secondary {
-    color: var(--inverted-primary-color);
+.Link:hover {
+    border-bottom: 1px solid var(--text-color-white-primary);
+}
+
+.Link:active {
+    transform: scale(0.95);
+}
+
+.Link_color_white {
+    color: var(--text-color-white-primary);
+}
+
+.Link_color_blue {
+    color: var(--text-color-blue-primary);
 }

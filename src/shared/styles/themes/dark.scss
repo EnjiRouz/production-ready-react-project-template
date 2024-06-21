@@ -1,8 +1,56 @@
 .Theme_dark {
-    --bg-color: #0f0b21;
-    --inverted-bg-color: #fff;
-    --primary-color: #b2a8ee;
-    --inverted-primary-color: #251f4b;
-    --secondary-color: #7269ff;
-    --inverted-secondary-color: #fff;
+    /* Цвета */
+    --color-strict-transparent: rgb(255 255 255 / 0%);
+    --color-strict-gray-050: rgb(71 90 128 / 50%);
+    --color-strict-gray-070: rgb(0 12 36 / 70%);
+    --color-strict-gray-060: rgb(26 43 77 / 60%);
+    --color-strict-gray-800: rgb(47 55 71);
+    --color-white-050: rgb(53 73 113 / 50%);
+    --color-white-060: rgb(26 43 77 / 60%);
+    --color-white-100: rgb(37 42 56);
+    --color-gray-010: rgb(131 165 230 / 10%);
+    --color-gray-015: rgb(138 170 230 / 15%);
+    --color-gray-020: rgb(103 122 158 / 20%);
+    --color-gray-030: rgb(154 180 230 / 30%);
+    --color-gray-040: rgb(161 185 230 / 40%);
+    --color-gray-050: rgb(163 184 223 / 50%);
+    --color-gray-060: rgb(175 194 230 / 60%);
+    --color-gray-070: rgb(182 198 230 / 70%);
+    --color-gray-080: rgb(209 225 255 / 80%);
+    --color-gray-090: rgb(235 242 255 / 90%);
+    --color-gray-200: rgb(31 36 48);
+    --color-gray-300: rgb(27 32 43);
+    --color-gray-500: rgb(97 111 136);
+    --color-yellow-010: rgb(247 218 104 / 20%);
+    --color-yellow-020: rgb(247 218 104 / 40%);
+    --color-yellow-060: rgb(237 196 33 / 60%);
+    --color-yellow-100: rgb(247 218 104);
+    --color-yellow-200: rgb(237 196 33);
+    --color-yellow-300: rgb(224 168 0);
+    --color-red-010: rgb(255 46 46 / 16%);
+    --color-red-020: rgb(255 46 46 / 30%);
+    --color-red-040: rgb(255 86 86 / 50%);
+    --color-red-060: rgb(255 86 86 / 65%);
+    --color-red-100: rgb(238 79 79);
+    --color-green-010: rgb(118 217 131 / 20%);
+    --color-green-020: rgb(118 217 131 / 30%);
+    --color-green-030: rgb(51 179 67 / 33%);
+    --color-green-060: rgb(118 217 131 / 60%);
+    --color-green-100: rgb(118 217 131);
+    --color-blue-010: rgb(112 164 255 / 25%);
+    --color-blue-060: rgb(112 164 255 / 60%);
+    --color-blue-100: rgb(112 164 255);
+    --color-purple-020: rgb(181 135 255 / 20%);
+    --color-purple-030: rgb(181 135 255 / 30%);
+    --color-purple-060: rgb(181 135 255 / 60%);
+    --color-purple-100: rgb(181 135 255);
+    --color-purple-200: rgb(150 104 243); 
+
+    /* Стили теней */
+    --shadow-tooltip: 0px 0px 3px rgb(18 23 37 / 50%), 0px 4px 8px rgb(18 23 37 / 50%);
+    --shadow-filter-tooltip: drop-shadow(0px 0px 3px rgb(18 23 37 / 50%)) drop-shadow(0px 4px 8px rgb(18 23 37 / 50%));
+    --shadow-popover: 0px 0px 3px rgb(18 23 37 / 50%), 0px 10px 40px rgb(18 23 37 / 50%);
+    --shadow-filter-popover: drop-shadow(0px 0px 3px rgb(18 23 37 / 50%)) drop-shadow(0px 10px 40px rgb(18 23 37 / 50%));
+    --shadow-dialog: 0px 10px 40px rgb(18 23 37 / 50%), 0px 0px 3px rgb(18 23 37 / 50%);
+    --shadow-filter-dialog: drop-shadow(0px 10px 40px rgb(18 23 37 / 50%)) drop-shadow(0px 0px 3px rgb(18 23 37 / 50%));
 }

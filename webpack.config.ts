@@ -19,12 +19,13 @@ const paths: BuildPaths = {
  * Конфигурация Webpack
  */
 export default (env: BuildEnvironment): Configuration => {
-    const { mode = 'development', port = 3000 } = env;
+    const { mode = 'development', port = 3000, isAnalyzeBundleEnabled = 'false' } = env;
 
     const config: Configuration = buildWebpackConfig({
         mode,
         paths,
-        port
+        port,
+        isAnalyzeBundleEnabled
     });
 
     return config;

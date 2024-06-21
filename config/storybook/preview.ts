@@ -1,7 +1,7 @@
 import { withThemeByClassName } from '@storybook/addon-themes';
 import { type Preview } from '@storybook/react';
 
-import { withRouter } from '../../src/shared/lib/testHelpers/storybook/decorators';
+import { withRouter, withStyles } from '../../src/shared/lib/testHelpers/storybook/decorators';
 import { Theme } from '../../src/shared/lib/theme';
 import '../../src/shared/styles';
 
@@ -22,6 +22,19 @@ const preview: Preview = {
                 state: 'open',
                 excludeDecorators: true
             }
+        },
+        backgrounds: {
+            default: 'light',
+            values: [
+                {
+                    name: 'light',
+                    value: 'rgb(255 255 255);' // используется цвет var(--color-white-100)
+                },
+                {
+                    name: 'dark',
+                    value: 'rgb(27 32 43);' // используется цвет var(--color-gray-300)
+                }
+            ]
         }
     },
     decorators: [
@@ -32,7 +45,8 @@ const preview: Preview = {
             },
             defaultTheme: 'light'
         }),
-        withRouter
+        withRouter,
+        withStyles({ display: 'inline-block' })
     ]
 
 };

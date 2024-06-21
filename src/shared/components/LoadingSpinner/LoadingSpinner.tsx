@@ -11,7 +11,7 @@ export type LoadingSpinnerProps = Omit<BaseProps, 'children'> & IconProps;
 
 export const LoadingSpinner: FC<LoadingSpinnerProps> = memo<LoadingSpinnerProps>(function LoadingSpinner ({
     size,
-    color = 'secondary',
+    color = 'blue',
     className,
     'data-testid': dataTestId = 'LoadingSpinner'
 }: LoadingSpinnerProps) {

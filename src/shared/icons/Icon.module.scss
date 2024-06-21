@@ -1,14 +1,15 @@
 .Icon {
     display: flex;
-    flex-shrink: 1;
+    flex-shrink: 0;
+    transition: var(--transition-change-animation);
 }
 
-.Icon_color_primary {
-    color: var(--inverted-primary-color);
+.Icon_color_white {
+    color: var(--icon-color-white-primary);
 }
 
-.Icon_color_secondary {
-    color: var(--primary-color);
+.Icon_color_blue {
+    color: var(--icon-color-blue-primary);
 }
 
 .Icon_size_s {

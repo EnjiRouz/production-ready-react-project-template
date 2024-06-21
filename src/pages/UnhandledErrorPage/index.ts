@@ -1,1 +1,1 @@
-export { UnhandledErrorPage } from './components/UnhandledErrorPage';
+export { UnhandledErrorPage } from './UnhandledErrorPage';

@@ -3,28 +3,42 @@
     justify-content: center;
     align-items: center;
     min-width: 48px;
-    height: 32px;  
-    padding: 8px 16px;
+    height: 32px;
+    margin: 0;  
+    padding: var(--padding-xs) var(--padding-m);
     border: none;
     border-radius: var(--border-radius-m);
     cursor: pointer;
-    font: var(--font-m);
+    font:var(--font-m);
+    text-decoration: none;
+    transition: var(--transition-change-animation);
 }
 
-.Button_color_primary {
-    background: var(--primary-color);
-    color: var(--inverted-primary-color);
+.Button:hover {
+    transform: scale(1.1);
 }
 
-.Button_color_secondary {
-    background: var(--secondary-color);
-    color: var(--inverted-secondary-color);
+.Button:active {
+    transform: scale(0.95);
 }
 
-/* TODO обновить цвета дизайн-системы */
+.Button_color_white {
+    background: var(--background-color-white);
+    color: var(--text-color-blue-primary);
+}
 
-.Button_disabled.Button_color_primary,
-.Button_disabled.Button_color_secondary {
-    background: var(--primary-color);
-    color: var(--inverted-primary-color);
+.Button_color_blue {
+    background: var(--background-color-blue-2);
+    color: var(--text-color-strict-black-primary);
+}
+
+.Button_disabled.Button_color_white, 
+.Button_disabled.Button_color_white:hover,
+.Button_disabled.Button_color_blue,
+.Button_disabled.Button_color_blue:hover {
+    background: var(--background-color-gray);
+    color: var(--text-color-gray-2-secondary);
+    cursor: default;
+    box-shadow: none;
+    transform: none;
 }

@@ -1,8 +1,8 @@
 import { type FC, memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { LanguageSwitcher } from '@/features/languageSwitcher/LanguageSwitcher';
-import { ThemeSwitcher } from '@/features/themeSwitcher/components';
+import { LanguageSwitcher } from '@/features/languageSwitcher';
+import { ThemeSwitcher } from '@/features/themeSwitcher';
 import { type BaseProps, Link } from '@/shared/components';
 import { routeConfig } from '@/shared/config/routeConfig';
 import { getBemClasses } from '@/shared/lib/classNameUtils';
@@ -23,8 +23,10 @@ export const NavigationBar: FC<NavigationBarProps> = memo<NavigationBarProps>(
             return Object.values(routeConfig).map(({ name, path }) => {
                 if (!name || !path) return null;
 
+                const fullLinkPath = new URL(path, document.baseURI).href;
+
                 return (
-                    <Link color="secondary" to={path} key={path}>
+                    <Link color="white" title={fullLinkPath} to={path} key={path}>
                         {translate(name)}
                     </Link>
                 )

@@ -32,6 +32,7 @@
       }
     ],
     "indent": ["error", 4],
+    "no-console": "error",
     "no-shadow": "off",
     "no-unused-vars": "warn",
     "no-underscore-dangle": "off",
@@ -123,7 +124,7 @@
     ],
     "react/require-default-props": "warn",
     "react/react-in-jsx-scope": "off",
-    "react/jsx-props-no-spreading": "warn",
+    "react/jsx-props-no-spreading": "error",
     "react/function-component-definition": "off",
     "i18next/no-literal-string": [
       "error",

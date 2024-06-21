@@ -29,36 +29,35 @@ export interface BuildPaths {
 }
 
 /**
- * Опции для сборки приложения
- */
-export interface BuildOptions {
-    /**
-     * Вариант сборки приложения
-     */
-    mode: BuildMode;
-
-    /**
-     * Пути для сборки приложения
-     */
-    paths: BuildPaths;
-
-    /**
-     * Порт для запуска приложения
-     */
-    port: number;
-}
-
-/**
  * Переменные окружения
  */
 export interface BuildEnvironment {
     /**
      * Вариант сборки приложения
+     * @default 'development'
      */
     mode: BuildMode;
 
     /**
      * Порт для запуска приложения
+     * @default 3000
      */
     port: number;
+
+    /**
+     * Признак включения плагина для анализа размера bundle
+     * (поскольку в env нельзя передать Boolean, то используется строковый тип)
+     * @default 'false'
+     */
+    isAnalyzeBundleEnabled: 'true' | 'false';
+}
+
+/**
+ * Опции для сборки приложения
+ */
+export type BuildOptions = BuildEnvironment & {
+    /**
+     * Пути для сборки приложения
+     */
+    paths: BuildPaths;
 }

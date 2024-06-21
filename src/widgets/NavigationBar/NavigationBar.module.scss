@@ -1,15 +1,15 @@
 .NavigationBar {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: var(--gap-m);
     width: 100%;
     height: var(--navigation-bar-height);
-    padding: 14px 20px;
-    background: var(--inverted-bg-color);
+    padding: var(--padding-m) var(--padding-l);
+    background: var(--background-color-blue-2);
 }
 
 .NavigationBar__Links {
     display: flex;
-    gap: 16px;
+    gap: var(--gap-m);
     margin-left: auto;
 }

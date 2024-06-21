@@ -1,1 +1,1 @@
-export { LazyNotFoundPage } from './components/NotFoundPage/NotFoundPage.lazy';
+export { LazyNotFoundPage } from './NotFoundPage.lazy';
