@@ -18,3 +18,4 @@
 ./src/widgets/Sidebar/Sidebar.test.tsx // заготовка для RTL-тестов (react-testing-library)
 ./src/widgets/Sidebar/Sidebar.test.ts // заготовка для unit-тестов (можно переименовать или удалить, если не требуется)
 ./src/widgets/Sidebar/Sidebar.stories.tsx // заготовка для Storybook и скриншотных тестов
+```

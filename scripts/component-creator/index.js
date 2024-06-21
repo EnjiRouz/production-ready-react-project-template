@@ -30,6 +30,11 @@ const templates = [
     { file: `${componentDirectory}/${componentName}.index.ts`, template: require('./templates/main.js') }
 ];
 
+/**
+ * Создание файла
+ * @param file путь к файлу
+ * @param template шаблон для файла
+ */
 function createFile (file, template) {
     writeFileSync(file, template);
     console.log(file);
