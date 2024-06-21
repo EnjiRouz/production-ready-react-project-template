@@ -15,13 +15,13 @@ export type UnhandledErrorPageProps = Omit<BaseProps, 'children'> & {
      * Отловленная ошибка
      * @default ''
      */
-    error?: Error;
+    error: Error;
 
     /**
      * Дополнительная информация об ошибке
      * @default ''
      */
-    errorInfo?: ErrorInfo;
+    errorInfo: ErrorInfo;
 };
 
 export const UnhandledErrorPage: FC<UnhandledErrorPageProps> = memo<UnhandledErrorPageProps>(function UnhandledErrorPage ({

@@ -31,11 +31,13 @@ export const ThemeContext = createContext<ThemeContextProps>({});
 
 /**
  * Hook для получения контекста для переключения темы приложения
+ * @returns контекст темы приложения
  */
 export const useTheme = (): ThemeContextProps => useContext(ThemeContext);
 
 /**
  * Hook для получения классов инверсной темы
+ * @returns инверсная тема
  */
 export const useInvertedTheme = (): { theme: Theme } => {
     const { theme: currentTheme } = useContext(ThemeContext);

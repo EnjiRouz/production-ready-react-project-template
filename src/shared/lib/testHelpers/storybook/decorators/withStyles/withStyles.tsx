@@ -3,7 +3,8 @@ import { type StoryFn } from '@storybook/react'
 
 /**
  * Storybook-декоратор для добавления дополнительных стилей контейнеру истории
- * @param Story история с компонентом
+ * @param styles CSS-стили
+ * @returns контейнер истории с дополнительными стилями
  */
 // eslint-disable-next-line react/display-name -- не требуется для декоратора
 export const withStyles = (styles: CSSProperties = {}) => (Story: StoryFn) => (

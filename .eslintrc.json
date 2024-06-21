@@ -10,7 +10,8 @@
     "plugin:react-hooks/recommended",
     "plugin:i18next/recommended",
     "plugin:storybook/recommended",
-    "plugin:@conarti/feature-sliced/rules"
+    "plugin:@conarti/feature-sliced/rules",
+    "plugin:jsdoc/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -139,7 +140,11 @@
     ],
     "@conarti/feature-sliced/layers-slices": "error",
     "@conarti/feature-sliced/absolute-relative": "off",
-    "@conarti/feature-sliced/public-api": "off"
+    "@conarti/feature-sliced/public-api": "off",
+    "jsdoc/require-jsdoc": "error",
+    "jsdoc/require-property-type": "off",
+    "jsdoc/require-returns-type": "off",
+    "jsdoc/require-param-type": "off"
   },
   "overrides": [
     {
