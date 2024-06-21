@@ -39,7 +39,7 @@ export const ThemeProvider: FC<ThemeProviderProps> = memo<ThemeProviderProps>(
         const toggleTheme = useCallback(() => {
             const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
             onSetTheme(newTheme);
-        }, [theme]);
+        }, [onSetTheme, theme]);
 
         const context = useMemo(
             () => ({
@@ -47,7 +47,7 @@ export const ThemeProvider: FC<ThemeProviderProps> = memo<ThemeProviderProps>(
                 setTheme: onSetTheme,
                 toggleTheme
             }),
-            [theme]
+            [onSetTheme, theme, toggleTheme]
         );
 
         return (

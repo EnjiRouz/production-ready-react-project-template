@@ -42,6 +42,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
             errorInfo
         }));
 
+        // eslint-disable-next-line no-console -- оправданное использование консоли для отображения пойманных ошибок
         console.error(error, errorInfo?.componentStack);
     }
 

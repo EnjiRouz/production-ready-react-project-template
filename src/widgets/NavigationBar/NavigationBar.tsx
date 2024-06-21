@@ -18,8 +18,7 @@ export const NavigationBar: FC<NavigationBarProps> = memo<NavigationBarProps>(
         className,
         'data-testid': dataTestId = 'NavigationBar'
     }: NavigationBarProps) {
-        const { t: translate, i18n } = useTranslation();
-        const currentLanguage = i18n.language;
+        const { t: translate } = useTranslation();
 
         const navigationLinks = useMemo(() => {
             return Object.values(routeConfig).map(({ name, path }) => {
@@ -33,7 +32,7 @@ export const NavigationBar: FC<NavigationBarProps> = memo<NavigationBarProps>(
                     </Link>
                 )
             });
-        }, [currentLanguage]);
+        }, [translate]);
 
         return (
             <div

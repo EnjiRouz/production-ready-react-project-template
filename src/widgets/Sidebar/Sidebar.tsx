@@ -24,7 +24,7 @@ export const Sidebar: FC<SidebarProps> = memo<SidebarProps>(function Sidebar ({
         return collapsed
             ? <ArrowRightIcon data-testid={`${dataTestId}.CollapseSwitcher.ArrowRightIcon`} />
             : <ArrowLeftIcon data-testid={`${dataTestId}.CollapseSwitcher.ArrowLeftIcon`}/>;
-    }, [collapsed]);
+    }, [collapsed, dataTestId]);
 
     const { t: translate } = useTranslation();
 
