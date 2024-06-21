@@ -6,6 +6,7 @@ import { getBemClasses } from '@/shared/lib/classNameUtils';
 import classes from './MainPage.module.scss';
 
 const MainPage: FunctionComponent = memo(function MainPage () {
+    // TODO переместить переводы в папки с компонентами, к которым они относятся
     const { t: translate } = useTranslation('MainPage');
 
     return (
